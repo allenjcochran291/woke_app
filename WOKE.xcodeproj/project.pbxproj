@@ -45,12 +45,14 @@
 		B9CBD9341BC12B2900167969 /* FDTakeController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9CBD9321BC12B2900167969 /* FDTakeController.m */; settings = {ASSET_TAGS = (); }; };
 		B9E45B251BBC4C5700D06838 /* WOProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E45B241BBC4C5700D06838 /* WOProfileViewController.m */; settings = {ASSET_TAGS = (); }; };
 		B9E45B291BBC60EB00D06838 /* WOContactTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E45B281BBC60EB00D06838 /* WOContactTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		B9EC55EF1C21DE710098FD45 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EC55EE1C21DE710098FD45 /* MapViewController.m */; settings = {ASSET_TAGS = (); }; };
+		B9EC55F01C21DE710098FD45 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EC55EE1C21DE710098FD45 /* MapViewController.m */; settings = {ASSET_TAGS = (); }; };
+		B9EC55F31C21DE930098FD45 /* MapTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EC55F21C21DE930098FD45 /* MapTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		B9EC55F41C21DE930098FD45 /* MapTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EC55F21C21DE930098FD45 /* MapTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		B9EDB72C1C1F154500A77E34 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B9444ADB1C0624FE0049FF47 /* AFURLConnectionOperation.m */; settings = {ASSET_TAGS = (); }; };
-		B9EDB72D1C1F154500A77E34 /* WOMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F3B2311C0DD09A005B8989 /* WOMapViewController.m */; settings = {ASSET_TAGS = (); }; };
 		B9EDB72E1C1F154500A77E34 /* WOEditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9CBD9211BC1250B00167969 /* WOEditProfileViewController.m */; settings = {ASSET_TAGS = (); }; };
 		B9EDB72F1C1F154500A77E34 /* WOCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B97EED8A1C0CD2F80089087B /* WOCreateViewController.m */; settings = {ASSET_TAGS = (); }; };
 		B9EDB7301C1F154500A77E34 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A0ECD31BBAE50300A20BB7 /* LoginViewController.m */; settings = {ASSET_TAGS = (); }; };
-		B9EDB7311C1F154500A77E34 /* nTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F8695F1C15EF300055D04F /* nTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		B9EDB7321C1F154500A77E34 /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B9444AD71C0624FE0049FF47 /* AFPropertyListRequestOperation.m */; settings = {ASSET_TAGS = (); }; };
 		B9EDB7331C1F154500A77E34 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B9444ACC1C0624FE0049FF47 /* AFHTTPRequestOperation.m */; settings = {ASSET_TAGS = (); }; };
 		B9EDB7341C1F154500A77E34 /* WOEmergencyContactTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9CBD9241BC1255C00167969 /* WOEmergencyContactTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
@@ -70,7 +72,6 @@
 		B9EDB7421C1F154500A77E34 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B98864501C038A2400606788 /* ViewController.m */; settings = {ASSET_TAGS = (); }; };
 		B9EDB7431C1F154500A77E34 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B9444ACA1C0624FE0049FF47 /* AFHTTPClient.m */; settings = {ASSET_TAGS = (); }; };
 		B9EDB7441C1F154500A77E34 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B90D8B3C1BB9C2240090741E /* main.m */; };
-		B9EDB7451C1F154500A77E34 /* WOMapTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F3B2341C0DD443005B8989 /* WOMapTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		B9EDB7461C1F154500A77E34 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = B9444ADF1C0624FE0049FF47 /* UIImageView+AFNetworking.m */; settings = {ASSET_TAGS = (); }; };
 		B9EDB7471C1F154500A77E34 /* WOProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E45B241BBC4C5700D06838 /* WOProfileViewController.m */; settings = {ASSET_TAGS = (); }; };
 		B9EDB7481C1F154500A77E34 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B9444AD51C0624FE0049FF47 /* AFNetworkReachabilityManager.m */; settings = {ASSET_TAGS = (); }; };
@@ -87,11 +88,8 @@
 		B9EDB7551C1F154500A77E34 /* FDTake.strings in Resources */ = {isa = PBXBuildFile; fileRef = B9CBD9301BC12B2900167969 /* FDTake.strings */; settings = {ASSET_TAGS = (); }; };
 		B9EDB7561C1F154500A77E34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B90D8B471BB9C2240090741E /* Assets.xcassets */; };
 		B9EDB7571C1F154500A77E34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B90D8B441BB9C2240090741E /* Main.storyboard */; };
-		B9F3B2321C0DD09A005B8989 /* WOMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F3B2311C0DD09A005B8989 /* WOMapViewController.m */; settings = {ASSET_TAGS = (); }; };
-		B9F3B2351C0DD443005B8989 /* WOMapTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F3B2341C0DD443005B8989 /* WOMapTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		B9F75E641C1898A10049FE22 /* WOUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F75E631C1898A10049FE22 /* WOUserModel.m */; settings = {ASSET_TAGS = (); }; };
 		B9F75E671C189A6C0049FE22 /* WOValidation+NSString.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F75E661C189A6C0049FE22 /* WOValidation+NSString.m */; settings = {ASSET_TAGS = (); }; };
-		B9F869601C15EF300055D04F /* nTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F8695F1C15EF300055D04F /* nTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		B9F869631C15F5AA0055D04F /* WOGetStartedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F869621C15F5AA0055D04F /* WOGetStartedViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -188,18 +186,16 @@
 		B9E45B241BBC4C5700D06838 /* WOProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOProfileViewController.m; sourceTree = "<group>"; };
 		B9E45B271BBC60EB00D06838 /* WOContactTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOContactTableViewCell.h; sourceTree = "<group>"; };
 		B9E45B281BBC60EB00D06838 /* WOContactTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOContactTableViewCell.m; sourceTree = "<group>"; };
+		B9EC55ED1C21DE710098FD45 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		B9EC55EE1C21DE710098FD45 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		B9EC55F11C21DE930098FD45 /* MapTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapTableViewCell.h; sourceTree = "<group>"; };
+		B9EC55F21C21DE930098FD45 /* MapTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapTableViewCell.m; sourceTree = "<group>"; };
 		B9EDB75B1C1F154500A77E34 /* WOKE copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WOKE copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9EDB75C1C1F154600A77E34 /* WOKE copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "WOKE copy-Info.plist"; path = "/Users/dheenadayalanselvaraj/Desktop/WOKE_current_source/WOKE copy-Info.plist"; sourceTree = "<absolute>"; };
-		B9F3B2301C0DD09A005B8989 /* WOMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOMapViewController.h; sourceTree = "<group>"; };
-		B9F3B2311C0DD09A005B8989 /* WOMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOMapViewController.m; sourceTree = "<group>"; };
-		B9F3B2331C0DD443005B8989 /* WOMapTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOMapTableViewCell.h; sourceTree = "<group>"; };
-		B9F3B2341C0DD443005B8989 /* WOMapTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOMapTableViewCell.m; sourceTree = "<group>"; };
 		B9F75E621C1898A10049FE22 /* WOUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOUserModel.h; sourceTree = "<group>"; };
 		B9F75E631C1898A10049FE22 /* WOUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOUserModel.m; sourceTree = "<group>"; };
 		B9F75E651C189A6C0049FE22 /* WOValidation+NSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WOValidation+NSString.h"; sourceTree = "<group>"; };
 		B9F75E661C189A6C0049FE22 /* WOValidation+NSString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WOValidation+NSString.m"; sourceTree = "<group>"; };
-		B9F8695E1C15EF300055D04F /* nTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nTableViewController.h; sourceTree = "<group>"; };
-		B9F8695F1C15EF300055D04F /* nTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = nTableViewController.m; sourceTree = "<group>"; };
 		B9F869611C15F5AA0055D04F /* WOGetStartedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOGetStartedViewController.h; sourceTree = "<group>"; };
 		B9F869621C15F5AA0055D04F /* WOGetStartedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOGetStartedViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -443,8 +439,6 @@
 				B9CBD91E1BC124FB00167969 /* WOProfileFooterTableViewCell.m */,
 				B9E45B271BBC60EB00D06838 /* WOContactTableViewCell.h */,
 				B9E45B281BBC60EB00D06838 /* WOContactTableViewCell.m */,
-				B9F3B2331C0DD443005B8989 /* WOMapTableViewCell.h */,
-				B9F3B2341C0DD443005B8989 /* WOMapTableViewCell.m */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -452,10 +446,10 @@
 		B9F3B22F1C0DCB5F005B8989 /* MapView */ = {
 			isa = PBXGroup;
 			children = (
-				B9F3B2301C0DD09A005B8989 /* WOMapViewController.h */,
-				B9F3B2311C0DD09A005B8989 /* WOMapViewController.m */,
-				B9F8695E1C15EF300055D04F /* nTableViewController.h */,
-				B9F8695F1C15EF300055D04F /* nTableViewController.m */,
+				B9EC55ED1C21DE710098FD45 /* MapViewController.h */,
+				B9EC55EE1C21DE710098FD45 /* MapViewController.m */,
+				B9EC55F11C21DE930098FD45 /* MapTableViewCell.h */,
+				B9EC55F21C21DE930098FD45 /* MapTableViewCell.m */,
 			);
 			path = MapView;
 			sourceTree = "<group>";
@@ -633,12 +627,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9444AE81C0624FE0049FF47 /* AFURLConnectionOperation.m in Sources */,
-				B9F3B2321C0DD09A005B8989 /* WOMapViewController.m in Sources */,
 				B9CBD9221BC1250B00167969 /* WOEditProfileViewController.m in Sources */,
 				B97EED8B1C0CD2F80089087B /* WOCreateViewController.m in Sources */,
 				B9A0ECD41BBAE50300A20BB7 /* LoginViewController.m in Sources */,
-				B9F869601C15EF300055D04F /* nTableViewController.m in Sources */,
 				B9444AE61C0624FE0049FF47 /* AFPropertyListRequestOperation.m in Sources */,
+				B9EC55F31C21DE930098FD45 /* MapTableViewCell.m in Sources */,
 				B9444AE11C0624FE0049FF47 /* AFHTTPRequestOperation.m in Sources */,
 				B9CBD92B1BC1255C00167969 /* WOEmergencyContactTableViewCell.m in Sources */,
 				B9444AE41C0624FE0049FF47 /* AFNetworkActivityIndicatorManager.m in Sources */,
@@ -657,10 +650,10 @@
 				B98864511C038A2400606788 /* ViewController.m in Sources */,
 				B9444AE01C0624FE0049FF47 /* AFHTTPClient.m in Sources */,
 				B90D8B3D1BB9C2240090741E /* main.m in Sources */,
-				B9F3B2351C0DD443005B8989 /* WOMapTableViewCell.m in Sources */,
 				B9444AEA1C0624FE0049FF47 /* UIImageView+AFNetworking.m in Sources */,
 				B9E45B251BBC4C5700D06838 /* WOProfileViewController.m in Sources */,
 				B9444AE51C0624FE0049FF47 /* AFNetworkReachabilityManager.m in Sources */,
+				B9EC55EF1C21DE710098FD45 /* MapViewController.m in Sources */,
 				B9CBD92E1BC1255C00167969 /* WOProfileNameTableViewCell.m in Sources */,
 				B9444AE21C0624FE0049FF47 /* AFImageRequestOperation.m in Sources */,
 				B9444AE31C0624FE0049FF47 /* AFJSONRequestOperation.m in Sources */,
@@ -692,12 +685,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9EDB72C1C1F154500A77E34 /* AFURLConnectionOperation.m in Sources */,
-				B9EDB72D1C1F154500A77E34 /* WOMapViewController.m in Sources */,
 				B9EDB72E1C1F154500A77E34 /* WOEditProfileViewController.m in Sources */,
 				B9EDB72F1C1F154500A77E34 /* WOCreateViewController.m in Sources */,
 				B9EDB7301C1F154500A77E34 /* LoginViewController.m in Sources */,
-				B9EDB7311C1F154500A77E34 /* nTableViewController.m in Sources */,
 				B9EDB7321C1F154500A77E34 /* AFPropertyListRequestOperation.m in Sources */,
+				B9EC55F41C21DE930098FD45 /* MapTableViewCell.m in Sources */,
 				B9EDB7331C1F154500A77E34 /* AFHTTPRequestOperation.m in Sources */,
 				B9EDB7341C1F154500A77E34 /* WOEmergencyContactTableViewCell.m in Sources */,
 				B9EDB7351C1F154500A77E34 /* AFNetworkActivityIndicatorManager.m in Sources */,
@@ -716,10 +708,10 @@
 				B9EDB7421C1F154500A77E34 /* ViewController.m in Sources */,
 				B9EDB7431C1F154500A77E34 /* AFHTTPClient.m in Sources */,
 				B9EDB7441C1F154500A77E34 /* main.m in Sources */,
-				B9EDB7451C1F154500A77E34 /* WOMapTableViewCell.m in Sources */,
 				B9EDB7461C1F154500A77E34 /* UIImageView+AFNetworking.m in Sources */,
 				B9EDB7471C1F154500A77E34 /* WOProfileViewController.m in Sources */,
 				B9EDB7481C1F154500A77E34 /* AFNetworkReachabilityManager.m in Sources */,
+				B9EC55F01C21DE710098FD45 /* MapViewController.m in Sources */,
 				B9EDB7491C1F154500A77E34 /* WOProfileNameTableViewCell.m in Sources */,
 				B9EDB74A1C1F154500A77E34 /* AFImageRequestOperation.m in Sources */,
 				B9EDB74B1C1F154500A77E34 /* AFJSONRequestOperation.m in Sources */,

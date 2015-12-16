@@ -1,14 +1,14 @@
 //
-//  WOMapTableViewCell.m
+//  MapTableViewCell.m
 //  WOKE
 //
-//  Created by mac on 12/1/15.
+//  Created by mac on 12/16/15.
 //  Copyright © 2015 Themesoft. All rights reserved.
 //
 
-#import "WOMapTableViewCell.h"
+#import "MapTableViewCell.h"
 
-@implementation WOMapTableViewCell
+@implementation MapTableViewCell
 
 - (void)awakeFromNib {
     // Initialization code

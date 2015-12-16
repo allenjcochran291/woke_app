@@ -174,6 +174,15 @@
 
 - (IBAction)loginButtonClicked:(UIButton *)sender {
     
+    if (true) {
+        [self performSegueWithIdentifier:@"sucessLogin" sender:nil];
+        
+        
+        return;
+    }
+   
+    
+    
     [_userNameTxt resignFirstResponder];
     [_passWordTxt resignFirstResponder];
 
