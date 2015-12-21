@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="62" id="KGk-i7-Jjw" customClass="MateTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="352" height="62"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="352" height="61"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AaW-NA-axz">
+                        <rect key="frame" x="19" y="8" width="47" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="CMb-OG-1og"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="II3-tf-fwm">
+                        <rect key="frame" x="23" y="32" width="31" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="2gV-d5-Efm"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8r-nP-Ew4">
+                        <rect key="frame" x="313" y="16" width="23" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="jUt-h3-d16"/>
+                        </constraints>
+                        <state key="normal" backgroundImage="WOK_PHONE_ICON"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="II3-tf-fwm" firstAttribute="top" secondItem="AaW-NA-axz" secondAttribute="bottom" constant="3" id="2k6-Hp-4IX"/>
+                    <constraint firstItem="U8r-nP-Ew4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="7Pf-ef-2nB"/>
+                    <constraint firstItem="AaW-NA-axz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="SWU-Ob-iuk"/>
+                    <constraint firstItem="II3-tf-fwm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="23" id="YDf-tA-mqB"/>
+                    <constraint firstItem="AaW-NA-axz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="19" id="a5s-MO-H0C"/>
+                    <constraint firstAttribute="trailing" secondItem="U8r-nP-Ew4" secondAttribute="trailing" constant="16" id="sdg-dL-Jul"/>
+                    <constraint firstItem="U8r-nP-Ew4" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="yIb-i0-O5w"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="inviteButton" destination="U8r-nP-Ew4" id="iNc-F4-k0M"/>
+                <outlet property="phoneNo" destination="II3-tf-fwm" id="biA-zq-vnb"/>
+                <outlet property="userTitle" destination="AaW-NA-axz" id="n6T-9v-nhC"/>
+            </connections>
+            <point key="canvasLocation" x="536" y="383"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="WOK_PHONE_ICON" width="23" height="26"/>
+    </resources>
+</document>

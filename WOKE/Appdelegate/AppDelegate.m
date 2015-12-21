@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "AFHTTPRequestOperation.h"
+#import <AddressBook/AddressBook.h>
 @interface AppDelegate ()
 
 @end
@@ -22,6 +23,10 @@
 
     // Override point for customization after application launch.
     return YES;
+}
++(AppDelegate* )appdelegate
+{
+    return (AppDelegate *)[[UIApplication sharedApplication] delegate];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

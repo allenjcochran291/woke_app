@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B90541301C287A38006C6091 /* WOMatesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B905412E1C287A38006C6091 /* WOMatesViewController.m */; settings = {ASSET_TAGS = (); }; };
+		B90541311C287A38006C6091 /* WOMatesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B905412E1C287A38006C6091 /* WOMatesViewController.m */; settings = {ASSET_TAGS = (); }; };
+		B90541331C287A46006C6091 /* WOMatesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B90541321C287A46006C6091 /* WOMatesViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		B90541341C287A46006C6091 /* WOMatesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B90541321C287A46006C6091 /* WOMatesViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		B90D8B3D1BB9C2240090741E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B90D8B3C1BB9C2240090741E /* main.m */; };
 		B90D8B461BB9C2240090741E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B90D8B441BB9C2240090741E /* Main.storyboard */; };
 		B90D8B481BB9C2240090741E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B90D8B471BB9C2240090741E /* Assets.xcassets */; };
@@ -88,9 +92,27 @@
 		B9EDB7551C1F154500A77E34 /* FDTake.strings in Resources */ = {isa = PBXBuildFile; fileRef = B9CBD9301BC12B2900167969 /* FDTake.strings */; settings = {ASSET_TAGS = (); }; };
 		B9EDB7561C1F154500A77E34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B90D8B471BB9C2240090741E /* Assets.xcassets */; };
 		B9EDB7571C1F154500A77E34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B90D8B441BB9C2240090741E /* Main.storyboard */; };
+		B9EEC6F31C27C527005DCA83 /* MateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EEC6F11C27C527005DCA83 /* MateTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		B9EEC6F41C27C527005DCA83 /* MateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EEC6F11C27C527005DCA83 /* MateTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		B9EEC6F51C27C527005DCA83 /* MateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9EEC6F21C27C527005DCA83 /* MateTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		B9EEC6F61C27C527005DCA83 /* MateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9EEC6F21C27C527005DCA83 /* MateTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		B9F75E641C1898A10049FE22 /* WOUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F75E631C1898A10049FE22 /* WOUserModel.m */; settings = {ASSET_TAGS = (); }; };
 		B9F75E671C189A6C0049FE22 /* WOValidation+NSString.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F75E661C189A6C0049FE22 /* WOValidation+NSString.m */; settings = {ASSET_TAGS = (); }; };
+		B9F7A48D1C26A928005E8ADB /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9F7A48A1C26A928005E8ADB /* CustomCell.xib */; settings = {ASSET_TAGS = (); }; };
+		B9F7A48E1C26A928005E8ADB /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9F7A48A1C26A928005E8ADB /* CustomCell.xib */; settings = {ASSET_TAGS = (); }; };
+		B9F7A48F1C26A928005E8ADB /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9F7A48A1C26A928005E8ADB /* CustomCell.xib */; settings = {ASSET_TAGS = (); }; };
+		B9F7A4901C26A928005E8ADB /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9F7A48A1C26A928005E8ADB /* CustomCell.xib */; settings = {ASSET_TAGS = (); }; };
+		B9F7A4911C26A928005E8ADB /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F7A48C1C26A928005E8ADB /* CustomCell.m */; settings = {ASSET_TAGS = (); }; };
+		B9F7A4921C26A928005E8ADB /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F7A48C1C26A928005E8ADB /* CustomCell.m */; settings = {ASSET_TAGS = (); }; };
+		B9F7A4931C26A928005E8ADB /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F7A48C1C26A928005E8ADB /* CustomCell.m */; settings = {ASSET_TAGS = (); }; };
+		B9F7A4941C26A928005E8ADB /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F7A48C1C26A928005E8ADB /* CustomCell.m */; settings = {ASSET_TAGS = (); }; };
+		B9F7A4971C26AD54005E8ADB /* AnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F7A4961C26AD54005E8ADB /* AnnotationView.m */; settings = {ASSET_TAGS = (); }; };
+		B9F7A4981C26AD54005E8ADB /* AnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F7A4961C26AD54005E8ADB /* AnnotationView.m */; settings = {ASSET_TAGS = (); }; };
+		B9F7A4991C26AD54005E8ADB /* AnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F7A4961C26AD54005E8ADB /* AnnotationView.m */; settings = {ASSET_TAGS = (); }; };
+		B9F7A49A1C26AD54005E8ADB /* AnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F7A4961C26AD54005E8ADB /* AnnotationView.m */; settings = {ASSET_TAGS = (); }; };
 		B9F869631C15F5AA0055D04F /* WOGetStartedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F869621C15F5AA0055D04F /* WOGetStartedViewController.m */; settings = {ASSET_TAGS = (); }; };
+		B9F9B1161C25C78C00D6AAFD /* ProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F9B1151C25C78C00D6AAFD /* ProfileTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		B9F9B1171C25C78C00D6AAFD /* ProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F9B1151C25C78C00D6AAFD /* ProfileTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +133,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B905412E1C287A38006C6091 /* WOMatesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOMatesViewController.m; sourceTree = "<group>"; };
+		B905412F1C287A38006C6091 /* WOMatesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOMatesViewController.h; sourceTree = "<group>"; };
+		B90541321C287A46006C6091 /* WOMatesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WOMatesViewController.xib; sourceTree = "<group>"; };
 		B90D8B381BB9C2240090741E /* WOKE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WOKE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B90D8B3C1BB9C2240090741E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B90D8B451BB9C2240090741E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -192,12 +217,22 @@
 		B9EC55F21C21DE930098FD45 /* MapTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapTableViewCell.m; sourceTree = "<group>"; };
 		B9EDB75B1C1F154500A77E34 /* WOKE copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WOKE copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9EDB75C1C1F154600A77E34 /* WOKE copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "WOKE copy-Info.plist"; path = "/Users/dheenadayalanselvaraj/Desktop/WOKE_current_source/WOKE copy-Info.plist"; sourceTree = "<absolute>"; };
+		B9EEC6F01C27C527005DCA83 /* MateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MateTableViewCell.h; sourceTree = "<group>"; };
+		B9EEC6F11C27C527005DCA83 /* MateTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MateTableViewCell.m; sourceTree = "<group>"; };
+		B9EEC6F21C27C527005DCA83 /* MateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MateTableViewCell.xib; sourceTree = "<group>"; };
 		B9F75E621C1898A10049FE22 /* WOUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOUserModel.h; sourceTree = "<group>"; };
 		B9F75E631C1898A10049FE22 /* WOUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOUserModel.m; sourceTree = "<group>"; };
 		B9F75E651C189A6C0049FE22 /* WOValidation+NSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WOValidation+NSString.h"; sourceTree = "<group>"; };
 		B9F75E661C189A6C0049FE22 /* WOValidation+NSString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WOValidation+NSString.m"; sourceTree = "<group>"; };
+		B9F7A48A1C26A928005E8ADB /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
+		B9F7A48B1C26A928005E8ADB /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
+		B9F7A48C1C26A928005E8ADB /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
+		B9F7A4951C26AD54005E8ADB /* AnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnotationView.h; sourceTree = "<group>"; };
+		B9F7A4961C26AD54005E8ADB /* AnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnotationView.m; sourceTree = "<group>"; };
 		B9F869611C15F5AA0055D04F /* WOGetStartedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOGetStartedViewController.h; sourceTree = "<group>"; };
 		B9F869621C15F5AA0055D04F /* WOGetStartedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOGetStartedViewController.m; sourceTree = "<group>"; };
+		B9F9B1141C25C78C00D6AAFD /* ProfileTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileTableViewController.h; sourceTree = "<group>"; };
+		B9F9B1151C25C78C00D6AAFD /* ProfileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +296,7 @@
 		B90D8B3A1BB9C2240090741E /* WOKE */ = {
 			isa = PBXGroup;
 			children = (
+				B9EEC6E31C27B91E005DCA83 /* MateView */,
 				B9F75E611C18987A0049FE22 /* Model */,
 				B9F3B22F1C0DCB5F005B8989 /* MapView */,
 				B9444C6E1C062C4E0049FF47 /* MBProgressHUD.h */,
@@ -401,6 +437,8 @@
 				B97EED8A1C0CD2F80089087B /* WOCreateViewController.m */,
 				B9F869611C15F5AA0055D04F /* WOGetStartedViewController.h */,
 				B9F869621C15F5AA0055D04F /* WOGetStartedViewController.m */,
+				B9F9B1141C25C78C00D6AAFD /* ProfileTableViewController.h */,
+				B9F9B1151C25C78C00D6AAFD /* ProfileTableViewController.m */,
 			);
 			path = ProfileScreen;
 			sourceTree = "<group>";
@@ -427,6 +465,9 @@
 		B9E45B261BBC60CD00D06838 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				B9F7A48A1C26A928005E8ADB /* CustomCell.xib */,
+				B9F7A48B1C26A928005E8ADB /* CustomCell.h */,
+				B9F7A48C1C26A928005E8ADB /* CustomCell.m */,
 				B9CBD9231BC1255C00167969 /* WOEmergencyContactTableViewCell.h */,
 				B9CBD9241BC1255C00167969 /* WOEmergencyContactTableViewCell.m */,
 				B9CBD9251BC1255C00167969 /* WOProfileAddressTableViewCell.h */,
@@ -439,13 +480,28 @@
 				B9CBD91E1BC124FB00167969 /* WOProfileFooterTableViewCell.m */,
 				B9E45B271BBC60EB00D06838 /* WOContactTableViewCell.h */,
 				B9E45B281BBC60EB00D06838 /* WOContactTableViewCell.m */,
+				B9EEC6F01C27C527005DCA83 /* MateTableViewCell.h */,
+				B9EEC6F11C27C527005DCA83 /* MateTableViewCell.m */,
+				B9EEC6F21C27C527005DCA83 /* MateTableViewCell.xib */,
 			);
 			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		B9EEC6E31C27B91E005DCA83 /* MateView */ = {
+			isa = PBXGroup;
+			children = (
+				B905412E1C287A38006C6091 /* WOMatesViewController.m */,
+				B905412F1C287A38006C6091 /* WOMatesViewController.h */,
+				B90541321C287A46006C6091 /* WOMatesViewController.xib */,
+			);
+			path = MateView;
 			sourceTree = "<group>";
 		};
 		B9F3B22F1C0DCB5F005B8989 /* MapView */ = {
 			isa = PBXGroup;
 			children = (
+				B9F7A4951C26AD54005E8ADB /* AnnotationView.h */,
+				B9F7A4961C26AD54005E8ADB /* AnnotationView.m */,
 				B9EC55ED1C21DE710098FD45 /* MapViewController.h */,
 				B9EC55EE1C21DE710098FD45 /* MapViewController.m */,
 				B9EC55F11C21DE930098FD45 /* MapTableViewCell.h */,
@@ -587,9 +643,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9F7A48D1C26A928005E8ADB /* CustomCell.xib in Resources */,
 				B90D8B4B1BB9C2240090741E /* LaunchScreen.storyboard in Resources */,
+				B90541331C287A46006C6091 /* WOMatesViewController.xib in Resources */,
 				B9CBD9331BC12B2900167969 /* FDTake.strings in Resources */,
 				B90D8B481BB9C2240090741E /* Assets.xcassets in Resources */,
+				B9EEC6F51C27C527005DCA83 /* MateTableViewCell.xib in Resources */,
 				B90D8B461BB9C2240090741E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -598,6 +657,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9F7A48E1C26A928005E8ADB /* CustomCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,6 +665,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9F7A48F1C26A928005E8ADB /* CustomCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,9 +673,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9F7A4901C26A928005E8ADB /* CustomCell.xib in Resources */,
 				B9EDB7541C1F154500A77E34 /* LaunchScreen.storyboard in Resources */,
+				B90541341C287A46006C6091 /* WOMatesViewController.xib in Resources */,
 				B9EDB7551C1F154500A77E34 /* FDTake.strings in Resources */,
 				B9EDB7561C1F154500A77E34 /* Assets.xcassets in Resources */,
+				B9EEC6F61C27C527005DCA83 /* MateTableViewCell.xib in Resources */,
 				B9EDB7571C1F154500A77E34 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -626,9 +690,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9EEC6F31C27C527005DCA83 /* MateTableViewCell.m in Sources */,
 				B9444AE81C0624FE0049FF47 /* AFURLConnectionOperation.m in Sources */,
 				B9CBD9221BC1250B00167969 /* WOEditProfileViewController.m in Sources */,
 				B97EED8B1C0CD2F80089087B /* WOCreateViewController.m in Sources */,
+				B9F9B1161C25C78C00D6AAFD /* ProfileTableViewController.m in Sources */,
+				B9F7A4911C26A928005E8ADB /* CustomCell.m in Sources */,
 				B9A0ECD41BBAE50300A20BB7 /* LoginViewController.m in Sources */,
 				B9444AE61C0624FE0049FF47 /* AFPropertyListRequestOperation.m in Sources */,
 				B9EC55F31C21DE930098FD45 /* MapTableViewCell.m in Sources */,
@@ -648,7 +715,9 @@
 				B98864551C038CE200606788 /* WOForgotPasswordViewController.m in Sources */,
 				B9A0ECD71BBAE51400A20BB7 /* WORegistrationViewController.m in Sources */,
 				B98864511C038A2400606788 /* ViewController.m in Sources */,
+				B90541301C287A38006C6091 /* WOMatesViewController.m in Sources */,
 				B9444AE01C0624FE0049FF47 /* AFHTTPClient.m in Sources */,
+				B9F7A4971C26AD54005E8ADB /* AnnotationView.m in Sources */,
 				B90D8B3D1BB9C2240090741E /* main.m in Sources */,
 				B9444AEA1C0624FE0049FF47 /* UIImageView+AFNetworking.m in Sources */,
 				B9E45B251BBC4C5700D06838 /* WOProfileViewController.m in Sources */,
@@ -668,6 +737,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9F7A4921C26A928005E8ADB /* CustomCell.m in Sources */,
+				B9F7A4981C26AD54005E8ADB /* AnnotationView.m in Sources */,
 				B90D8B561BB9C2240090741E /* WOKETests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -676,6 +747,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9F7A4931C26A928005E8ADB /* CustomCell.m in Sources */,
+				B9F7A4991C26AD54005E8ADB /* AnnotationView.m in Sources */,
 				B90D8B611BB9C2240090741E /* WOKEUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -684,9 +757,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9EEC6F41C27C527005DCA83 /* MateTableViewCell.m in Sources */,
 				B9EDB72C1C1F154500A77E34 /* AFURLConnectionOperation.m in Sources */,
 				B9EDB72E1C1F154500A77E34 /* WOEditProfileViewController.m in Sources */,
 				B9EDB72F1C1F154500A77E34 /* WOCreateViewController.m in Sources */,
+				B9F9B1171C25C78C00D6AAFD /* ProfileTableViewController.m in Sources */,
+				B9F7A4941C26A928005E8ADB /* CustomCell.m in Sources */,
 				B9EDB7301C1F154500A77E34 /* LoginViewController.m in Sources */,
 				B9EDB7321C1F154500A77E34 /* AFPropertyListRequestOperation.m in Sources */,
 				B9EC55F41C21DE930098FD45 /* MapTableViewCell.m in Sources */,
@@ -706,7 +782,9 @@
 				B9EDB7401C1F154500A77E34 /* WOForgotPasswordViewController.m in Sources */,
 				B9EDB7411C1F154500A77E34 /* WORegistrationViewController.m in Sources */,
 				B9EDB7421C1F154500A77E34 /* ViewController.m in Sources */,
+				B90541311C287A38006C6091 /* WOMatesViewController.m in Sources */,
 				B9EDB7431C1F154500A77E34 /* AFHTTPClient.m in Sources */,
+				B9F7A49A1C26AD54005E8ADB /* AnnotationView.m in Sources */,
 				B9EDB7441C1F154500A77E34 /* main.m in Sources */,
 				B9EDB7461C1F154500A77E34 /* UIImageView+AFNetworking.m in Sources */,
 				B9EDB7471C1F154500A77E34 /* WOProfileViewController.m in Sources */,

@@ -14,5 +14,7 @@
 @property (strong, nonatomic) WOUserModel *userObj;
 @property(nonatomic,readwrite)BOOL isupdateProfile;
 
+-(NSMutableArray *)getContactAuthorizationFromUser;
+-(NSMutableArray *)getContacts;
 @end
 

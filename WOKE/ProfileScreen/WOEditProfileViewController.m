@@ -15,7 +15,7 @@
 
 @interface WOEditProfileViewController ()
 
-@property (weak, nonatomic) IBOutlet UITableView *tableVIew;
+@property (strong, nonatomic) IBOutlet UITableView *tableVIew;
 @end
 
 @implementation WOEditProfileViewController
@@ -29,11 +29,7 @@
     [super viewDidLoad];
     
     static NSString *cellIdentifier = @"WOProfileFooterTableViewCell";
-    WOProfileFooterTableViewCell *footerCell = [self.tableVIew dequeueReusableCellWithIdentifier:cellIdentifier];
-    footerCell.headerLabel.text = @"Add Emergency Contact";
-    footerCell.backgroundColor =[UIColor clearColor];
 
-    self.tableVIew.tableFooterView = footerCell;
 
     self.takeController = [[FDTakeController alloc] init];
     self.takeController.delegate = (id)self;
@@ -45,6 +41,10 @@
     //	self.takeController.cancelText = @"Cancel";
     //	self.takeController.noSourcesText = @"No Photos Available";
     // Do any additional setup after loading the view, typically from a nib.
+    [_tableVIew reloadData];
+    _tableVIew.backgroundColor = [UIColor blueColor];
+    
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,30 +54,30 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 5;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    int rowcount = 1;
-    switch (section) {
-        case 1:
-            rowcount = 3;
-            break;
-        case 2:
-            rowcount = 1;
-            break;
-        case 3:
-            rowcount = 2;
-            break;
-        case 4:
-            rowcount = 5;
-            break;
-            
-        default:
-            break;
-    }
-    return rowcount;
+//    int rowcount = 3;
+//    switch (section) {
+//        case 0:
+//            rowcount = 3;
+//            break;
+//        case 2:
+//            rowcount = 1;
+//            break;
+//        case 3:
+//            rowcount = 2;
+//            break;
+//        case 4:
+//            rowcount = 5;
+//            break;
+//            
+//        default:
+//            break;
+//    }
+    return 3;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -91,26 +91,26 @@
         default:
             break;
     }
-    return headerHeight;
+    return 0;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    switch (section) {
-        case 4:
-        {
-            static NSString *cellIdentifier = @"WOProfileFooterTableViewCell";
-            WOProfileFooterTableViewCell *headerCell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-            headerCell.headerLabel.text = @"Emergency Contacts";
-
-            headerCell.backgroundColor =[UIColor clearColor];
-
-            return headerCell;
-        }
-            break;
-        default:
-            break;
-    }
+//    switch (section) {
+//        case 4:
+//        {
+//            static NSString *cellIdentifier = @"WOProfileFooterTableViewCell";
+//            WOProfileFooterTableViewCell *headerCell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+//            headerCell.headerLabel.text = @"Emergency Contacts";
+//
+//            headerCell.backgroundColor =[UIColor clearColor];
+//
+//            return headerCell;
+//        }
+//            break;
+//        default:
+//            break;
+//    }
     return nil;
 }
 
@@ -119,7 +119,7 @@
     CGFloat cellHeight = 0.0;
     switch (indexPath.section) {
         case 0:
-            cellHeight = 180;
+   cellHeight = 30;
             break;
         case 1:
             cellHeight = 50;
@@ -142,57 +142,18 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    switch (indexPath.section) {
-        case 0:
-        {
-            static NSString *cellIdentifier = @"WOProfileNameTableViewCell";
-            WOProfileNameTableViewCell *profileNameCell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-            profileNameCell.backgroundColor =[UIColor clearColor];
-            return profileNameCell;
-        }
-            break;
-        case 1:
-        {
-            static NSString *cellIdentifier = @"WOProfileContactTableViewCell";
-            WOProfileContactTableViewCell *profileContactCell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-            profileContactCell.backgroundColor =[UIColor clearColor];
-
-            return profileContactCell;
-        }
-            break;
-        case 2:
-        {
-            static NSString *cellIdentifier = @"WOProfileContactTableViewCell";
-            WOProfileContactTableViewCell *profileContactCell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-            profileContactCell.backgroundColor =[UIColor clearColor];
-
-            return profileContactCell;
-        }
-            break;
-        case 3:
-        {
-            static NSString *cellIdentifier = @"WOProfileAddressTableViewCell";
-            WOProfileAddressTableViewCell *profileAddressCell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-            profileAddressCell.backgroundColor =[UIColor clearColor];
-
-            return profileAddressCell;
-        }
-            break;
-        case 4:
-        {
+ 
             static NSString *cellIdentifier = @"WOEmergencyContactTableViewCell";
             WOEmergencyContactTableViewCell *profileEmergencyContactCell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-            profileEmergencyContactCell.backgroundColor =[UIColor clearColor];
-
-            return profileEmergencyContactCell;
-        }
-            break;
-            
-        default:
-            break;
+    
+    if (profileEmergencyContactCell == nil) {
+        /* instantiate cell or load nib */
+        profileEmergencyContactCell = [[WOEmergencyContactTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] ;
     }
-    return nil;
-}
+            profileEmergencyContactCell.backgroundColor =[UIColor whiteColor];
+            
+            return profileEmergencyContactCell;
+       }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
@@ -208,35 +169,37 @@
         default:
             break;
     }
-    return footerHeight;
+    return 0;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
-    switch (section) {
-        case 1:
-        {
-            static NSString *cellIdentifier = @"WOProfileFooterTableViewCell";
-            WOProfileFooterTableViewCell *footerCell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-            footerCell.headerLabel.text = @"Add Phone";
-            footerCell.backgroundColor =[UIColor clearColor];
+    
 
-            return footerCell;
-        }
-            break;
-        case 2:
-        {
-            static NSString *cellIdentifier = @"WOProfileFooterTableViewCell";
-            WOProfileFooterTableViewCell *footerCell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-            footerCell.headerLabel.text = @"Add Email";
-            footerCell.backgroundColor =[UIColor clearColor];
-
-            return footerCell;
-        }
-            break;
-        default:
-            break;
-    }
+//    switch (section) {
+//        case 1:
+//        {
+//            static NSString *cellIdentifier = @"WOProfileFooterTableViewCell";
+//            WOProfileFooterTableViewCell *footerCell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+//            footerCell.headerLabel.text = @"Add Phone";
+//            footerCell.backgroundColor =[UIColor clearColor];
+//
+//            return footerCell;
+//        }
+//            break;
+//        case 2:
+//        {
+//            static NSString *cellIdentifier = @"WOProfileFooterTableViewCell";
+//            WOProfileFooterTableViewCell *footerCell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+//            footerCell.headerLabel.text = @"Add Email";
+//            footerCell.backgroundColor =[UIColor clearColor];
+//
+//            return footerCell;
+//        }
+//            break;
+//        default:
+//            break;
+//    }
     return nil;
 }
 //

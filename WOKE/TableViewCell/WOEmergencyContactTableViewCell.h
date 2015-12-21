@@ -10,4 +10,6 @@
 
 @interface WOEmergencyContactTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UISwitch *switchButton;
+
 @end
