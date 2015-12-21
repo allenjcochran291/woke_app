@@ -486,6 +486,18 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WOKE_BACKGROUND" translatesAutoresizingMaskIntoConstraints="NO" id="RIC-FV-pg5">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uNu-zV-ClC">
+                                <rect key="frame" x="0.0" y="30" width="320" height="29"/>
+                                <segments>
+                                    <segment title="Mates"/>
+                                    <segment title="Mates Groups"/>
+                                    <segment title="Contacts"/>
+                                </segments>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="segmentedControlIndexChanged" destination="gOl-Ua-AhI" eventType="valueChanged" id="emd-KH-tdb"/>
+                                </connections>
+                            </segmentedControl>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Vra-b9-kRN">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -506,12 +518,15 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Vra-b9-kRN" secondAttribute="trailing" id="2KP-Ma-Fg2"/>
                             <constraint firstItem="Vra-b9-kRN" firstAttribute="leading" secondItem="hRO-Kx-89l" secondAttribute="leading" id="5uo-bh-TMc"/>
-                            <constraint firstItem="Vra-b9-kRN" firstAttribute="top" secondItem="5Aw-dZ-8t9" secondAttribute="bottom" constant="8" id="KVz-r5-9Ku"/>
+                            <constraint firstItem="uNu-zV-ClC" firstAttribute="leading" secondItem="hRO-Kx-89l" secondAttribute="leading" id="BED-JN-0Na"/>
                             <constraint firstAttribute="trailing" secondItem="RIC-FV-pg5" secondAttribute="trailing" id="Mwv-QM-scQ"/>
+                            <constraint firstItem="uNu-zV-ClC" firstAttribute="top" secondItem="5Aw-dZ-8t9" secondAttribute="bottom" constant="21" id="QnJ-RQ-0ZU"/>
                             <constraint firstItem="RIC-FV-pg5" firstAttribute="top" secondItem="hRO-Kx-89l" secondAttribute="top" id="QxE-58-slN"/>
+                            <constraint firstAttribute="trailing" secondItem="uNu-zV-ClC" secondAttribute="trailing" id="S7F-0m-1vh"/>
                             <constraint firstItem="Xm8-20-69M" firstAttribute="top" secondItem="Vra-b9-kRN" secondAttribute="bottom" id="WX0-Qd-VyZ"/>
                             <constraint firstItem="Xm8-20-69M" firstAttribute="leading" secondItem="hRO-Kx-89l" secondAttribute="leading" id="Y0A-ku-NPq"/>
                             <constraint firstItem="LA6-kh-O3v" firstAttribute="top" secondItem="RIC-FV-pg5" secondAttribute="bottom" id="YE6-pC-TlP"/>
+                            <constraint firstItem="Vra-b9-kRN" firstAttribute="top" secondItem="uNu-zV-ClC" secondAttribute="bottom" constant="8" id="coh-fB-vX7"/>
                             <constraint firstItem="RIC-FV-pg5" firstAttribute="leading" secondItem="hRO-Kx-89l" secondAttribute="leading" id="nTf-21-Oej"/>
                             <constraint firstItem="LA6-kh-O3v" firstAttribute="top" secondItem="Xm8-20-69M" secondAttribute="bottom" id="xDZ-bK-wTM"/>
                             <constraint firstAttribute="trailing" secondItem="Xm8-20-69M" secondAttribute="trailing" id="yEj-ZJ-01L"/>
@@ -519,6 +534,7 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="RIC-FV-pg5"/>
+                                <exclude reference="uNu-zV-ClC"/>
                                 <exclude reference="Vra-b9-kRN"/>
                                 <exclude reference="Xm8-20-69M"/>
                             </mask>
@@ -527,7 +543,10 @@
                                 <exclude reference="xDZ-bK-wTM"/>
                                 <exclude reference="2KP-Ma-Fg2"/>
                                 <exclude reference="5uo-bh-TMc"/>
-                                <exclude reference="KVz-r5-9Ku"/>
+                                <exclude reference="coh-fB-vX7"/>
+                                <exclude reference="BED-JN-0Na"/>
+                                <exclude reference="QnJ-RQ-0ZU"/>
+                                <exclude reference="S7F-0m-1vh"/>
                                 <exclude reference="WX0-Qd-VyZ"/>
                                 <exclude reference="Y0A-ku-NPq"/>
                                 <exclude reference="yEj-ZJ-01L"/>
@@ -539,6 +558,7 @@
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="RIC-FV-pg5"/>
+                                <include reference="uNu-zV-ClC"/>
                                 <include reference="Vra-b9-kRN"/>
                                 <include reference="Xm8-20-69M"/>
                             </mask>
@@ -547,7 +567,10 @@
                                 <include reference="xDZ-bK-wTM"/>
                                 <include reference="2KP-Ma-Fg2"/>
                                 <include reference="5uo-bh-TMc"/>
-                                <include reference="KVz-r5-9Ku"/>
+                                <include reference="coh-fB-vX7"/>
+                                <include reference="BED-JN-0Na"/>
+                                <include reference="QnJ-RQ-0ZU"/>
+                                <include reference="S7F-0m-1vh"/>
                                 <include reference="WX0-Qd-VyZ"/>
                                 <include reference="Y0A-ku-NPq"/>
                                 <include reference="yEj-ZJ-01L"/>
@@ -562,6 +585,7 @@
                         <outlet property="searchBar" destination="Vra-b9-kRN" id="ZvH-08-Mf7"/>
                         <outlet property="searchBarController" destination="m6n-2v-CLF" id="gTF-X2-cG2"/>
                         <outlet property="searchDisplayController" destination="m6n-2v-CLF" id="hRZ-u8-NID"/>
+                        <outlet property="segment" destination="uNu-zV-ClC" id="MCa-PN-1aY"/>
                         <outlet property="tblContentList" destination="Xm8-20-69M" id="mtM-Wp-l0v"/>
                     </connections>
                 </viewController>

@@ -11,15 +11,23 @@
 @interface WOMatesViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     
     NSMutableArray *contentList;
+    NSMutableArray *categList;
+    UIPickerView *pickerView;
     NSMutableArray *filteredContentList;
     BOOL isSearching;
     AppDelegate* appdelegateObj;
+    NSString *categId;
+    NSString *mateUserId;
 
 }
 @property (strong, nonatomic) NSMutableArray *filteredContentList;
+@property (strong, nonatomic) UIPickerView *pickerView;
 
 @property (strong, nonatomic) IBOutlet UITableView *tblContentList;
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segment;
+
+@property (strong, nonatomic)NSDictionary* matesDict;
 @property (strong, nonatomic) IBOutlet UISearchDisplayController *searchBarController;
 
 @end

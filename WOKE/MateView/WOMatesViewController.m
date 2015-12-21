@@ -24,6 +24,36 @@
 
 #pragma mark - View lifecycle
 
+
+
+
+
+
+-(IBAction) segmentedControlIndexChanged
+{
+    
+    isSearching =NO;
+    switch (self.segment.selectedSegmentIndex) {
+        case 0:
+            contentList  = [_matesDict objectForKey:@"user_info"];
+            [self.tblContentList reloadData];
+            break;
+        case 1:
+            contentList  = [[NSMutableArray alloc]init];
+
+            [self.tblContentList  reloadData];
+            break;
+        case 2:
+             [self setContacts];
+            [self.tblContentList  reloadData];
+            break;
+        default:
+            break;
+    }
+    
+    
+    
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
@@ -31,11 +61,12 @@
 
 
     filteredContentList = [[NSMutableArray alloc] init];
-   contentList= [self getContactAuthorizationFromUser];
+   [self getContactAuthorizationFromUser];
     [self.tblContentList registerNib:[UINib nibWithNibName:@"MateTableViewCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
     [self.searchBarController.searchResultsTableView registerNib:[UINib nibWithNibName:@"MateTableViewCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
-
-    [self setContacts];
+    self.tblContentList.backgroundColor =[UIColor clearColor];
+    [self loadMates:@"sa"];
+   
     [self.tblContentList reloadData];
 }
 -(NSMutableArray *)getContactAuthorizationFromUser{
@@ -88,13 +119,13 @@
                 NSMutableDictionary * contantDic = [[NSMutableDictionary alloc] init];
                 if ([name length]==0)
                 {
-                    [contantDic setValue:@"No name" forKey:@"name"];
+                    [contantDic setValue:@"No name" forKey:@"first_name"];
                 }
                 else
                 {
-                    [contantDic setValue:name forKey:@"name"];
+                    [contantDic setValue:name forKey:@"first_name"];
                 }
-                [contantDic setValue:removed5 forKey:@"phoneno"];
+                [contantDic setValue:removed5 forKey:@"mobile_no"];
                 [contantDic setValue:@"NO" forKey:@"isselected"];
                 NSData *contactImageData = (__bridge NSData *)ABPersonCopyImageDataWithFormat(thisPerson, kABPersonImageFormatThumbnail);
                 if (contactImageData!=nil)
@@ -133,7 +164,7 @@
 {
 
     contentList = [self getContacts];
-    //    NSSortDescriptor *contactSortDiscriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    //    NSSortDescriptor *contactSortDiscriptor = [[NSSortDescriptor alloc] initWithKey:@"first_name" ascending:YES];
     //    [addressbookConacts sortUsingDescriptors:[NSArray arrayWithObject:contactSortDiscriptor]];
     //    //NSLog(@"addressbookConacts:--->%@", addressbookConacts);
     //    newContactList = [[NSMutableDictionary alloc]init];
@@ -184,20 +215,21 @@
     if(cell == nil)
     {
         cell = [[MateTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        cell.inviteButton.tag =indexPath.row;
     }
     if (isSearching) {
-        cell.userTitle.text =  [[filteredContentList objectAtIndex:indexPath.row] valueForKey:@"name"];;
-        cell.phoneNo.text =  [[filteredContentList objectAtIndex:indexPath.row] valueForKey:@"phoneno"];;
-        NSLog(@"userName : %@   --- %lu",[[filteredContentList objectAtIndex:indexPath.row] valueForKey:@"name"], (unsigned long)[filteredContentList count]);
+        cell.userTitle.text =  [[filteredContentList objectAtIndex:indexPath.row] valueForKey:@"first_name"];;
+        cell.phoneNo.text =  [[filteredContentList objectAtIndex:indexPath.row] valueForKey:@"mobile_no"];;
+        NSLog(@"userName : %@   --- %lu",[[filteredContentList objectAtIndex:indexPath.row] valueForKey:@"first_name"], (unsigned long)[filteredContentList count]);
     }
     else {
-        cell.userTitle.text =  [[contentList objectAtIndex:indexPath.row] valueForKey:@"name"];;
-        cell.phoneNo.text =  [[contentList objectAtIndex:indexPath.row] valueForKey:@"phoneno"];;
+        cell.userTitle.text =  [[contentList objectAtIndex:indexPath.row] valueForKey:@"first_name"];;
+        cell.phoneNo.text =  [[contentList objectAtIndex:indexPath.row] valueForKey:@"mobile_no"];;
         
         
     }
+    cell.backgroundColor =[UIColor clearColor];
     // Configure the cell before it is displayed...
+    cell.inviteButton.tag =indexPath.row;
     [cell.inviteButton addTarget:self
                           action:@selector(inviteButton:)
                 forControlEvents:UIControlEventTouchUpInside];
@@ -207,64 +239,276 @@
 }
 -(void)inviteButton:(UIButton *)button
 {
-    NSString *userName;
-    NSString *phoneNo;
-    if (isSearching) {
-        userName =  [[filteredContentList objectAtIndex:button.tag] valueForKey:@"name"];;
-        phoneNo =  [[filteredContentList objectAtIndex:button.tag] valueForKey:@"phoneno"];;
-     
-    }
-    else {
-        userName =  [[contentList objectAtIndex:button.tag] valueForKey:@"name"];;
-        phoneNo =  [[contentList objectAtIndex:button.tag] valueForKey:@"phoneno"];;        
-    }
+    
+    if (self.segment.selectedSegmentIndex ==2) {
+        NSString *userName;
+        NSString *phoneNo;
+        if (isSearching) {
+            userName =  [[filteredContentList objectAtIndex:button.tag] valueForKey:@"first_name"];;
+            phoneNo =  [[filteredContentList objectAtIndex:button.tag] valueForKey:@"mobile_no"];;
+            
+        }
+        else {
+            userName =  [[contentList objectAtIndex:button.tag] valueForKey:@"first_name"];;
+            phoneNo =  [[contentList objectAtIndex:button.tag] valueForKey:@"mobile_no"];;
+        }
+        
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.mode = MBProgressHUDModeIndeterminate;
+        hud.labelText = @"Loading";
+        
+        [self.view addSubview:hud];
+        [self.view setUserInteractionEnabled:NO];
+        
+        NSURL *url = [NSURL URLWithString:@"http://www.creativelabinteractive.com/woke/api/index.php?route=account/invitetoapp"];
+        AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:url];
+        appdelegateObj = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+        NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                                API_KEY,@"client_key",
+                                userName, @"invitedUserName",
+                                @"1", @"user_id",
+                                phoneNo, @"mobile",
+                                @"fffff",@"device_id",
+                                nil];
+        
+        [httpClient postPath:@"" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            
+            NSError* error;
+            NSDictionary* json = [NSJSONSerialization JSONObjectWithData:responseObject
+                                                                 options:kNilOptions
+                                                                   error:&error];
+            
+            NSLog(@"LOGIN_SYNC = %@", json);
+            if ((int)[[json objectForKey:@"status"]valueForKey:@"code"]==500) {
+                
+            }
+            else{
+                [self presentAlert:[[json objectForKey:@"status"]valueForKey:@"message"]];
+            }
+            [hud removeFromSuperview];
+            [self.view setUserInteractionEnabled:YES];
+            
+            
+            
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            [hud removeFromSuperview];
+            [self.view setUserInteractionEnabled:YES];
+            [self presentAlert:error.localizedDescription];
+            
+            NSLog(@"[HTTPClient Error]: %@", error.localizedDescription);
+            
+        }];
 
+    }
+    else
+    {
+        NSString *userName;
+        NSString *phoneNo;
+        if (isSearching) {
+            userName =  [NSString stringWithFormat:@"%@",[[filteredContentList objectAtIndex:button.tag] valueForKey:@"user_id"]];;
+            phoneNo =  [[filteredContentList objectAtIndex:button.tag] valueForKey:@"mobile_no"];;
+            
+        }
+        else {
+userName =  [NSString stringWithFormat:@"%@",[[contentList objectAtIndex:button.tag] valueForKey:@"user_id"]];;            phoneNo =  [[contentList objectAtIndex:button.tag] valueForKey:@"mobile_no"];;
+        }
+        
+        mateUserId = userName;
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.mode = MBProgressHUDModeIndeterminate;
+        hud.labelText = @"Loading";
+        
+        [self.view addSubview:hud];
+        [self.view setUserInteractionEnabled:NO];
+        
+        NSURL *url = [NSURL URLWithString:@"http://www.creativelabinteractive.com/woke/api/index.php?route=account/putmate"];
+        AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:url];
+        appdelegateObj = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+        NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                                API_KEY,@"client_key",
+                                mateUserId, @"mate_user_id",
+                                @"1", @"user_id",
+                                @"fffff",@"device_id",
+                                @"21",@"category_id",
+                                nil];
+        
+        [httpClient postPath:@"" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            
+            NSError* error;
+            NSDictionary* json = [NSJSONSerialization JSONObjectWithData:responseObject
+                                                                 options:kNilOptions
+                                                                   error:&error];
+            
+            NSLog(@"LOGIN_SYNC = %@", json);
+            if ((int)[[json objectForKey:@"status"]valueForKey:@"code"]==500) {
+                
+            }
+            else{
+                [self presentAlert:[[json objectForKey:@"status"]valueForKey:@"message"]];
+            }
+            [hud removeFromSuperview];
+            [self.view setUserInteractionEnabled:YES];
+            
+            
+            
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            [hud removeFromSuperview];
+            [self.view setUserInteractionEnabled:YES];
+            [self presentAlert:error.localizedDescription];
+            
+            NSLog(@"[HTTPClient Error]: %@", error.localizedDescription);
+            
+        }];
+      //  [self loadPicker];
+    }
+ 
+}
+
+
+-(void)loadMates:(NSString *)keyWord
+{
+
+    
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.mode = MBProgressHUDModeIndeterminate;
     hud.labelText = @"Loading";
     
-    [self.view addSubview:hud];
-    [self.view setUserInteractionEnabled:NO];
+    [self.tblContentList addSubview:hud];
+    [self.tblContentList setUserInteractionEnabled:NO];
     
-    NSURL *url = [NSURL URLWithString:@"http://www.creativelabinteractive.com/woke/api/index.php?route=account/invitetoapp"];
+    NSURL *url = [NSURL URLWithString:@"http://www.creativelabinteractive.com/woke/api/index.php?route=account/getmatesbykeyword"];
     AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:url];
     appdelegateObj = (AppDelegate*)[[UIApplication sharedApplication]delegate];
     NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
                             API_KEY,@"client_key",
-                            userName, @"invitedUserName",
+                            keyWord, @"keyword",
                             @"1", @"user_id",
-                              phoneNo, @"mobile",
                             @"fffff",@"device_id",
                             nil];
     
     [httpClient postPath:@"" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         NSError* error;
-        NSDictionary* json = [NSJSONSerialization JSONObjectWithData:responseObject
+        _matesDict = [NSJSONSerialization JSONObjectWithData:responseObject
                                                              options:kNilOptions
                                                                error:&error];
         
-        NSLog(@"LOGIN_SYNC = %@", json);
-        if ((int)[[json objectForKey:@"status"]valueForKey:@"code"]==500) {
-            
+        NSLog(@"LOGIN_SYNC = %@", _matesDict);
+        if ([[[_matesDict objectForKey:@"status"]valueForKey:@"code"]integerValue]==505){
+            contentList = [[NSMutableArray alloc]init];
+            contentList  = [_matesDict objectForKey:@"user_info"];
+            [self.tblContentList reloadData];
         }
         else{
-            [self presentAlert:[[json objectForKey:@"status"]valueForKey:@"message"]];
+            [self presentAlert:[[_matesDict objectForKey:@"status"]valueForKey:@"message"]];
         }
         [hud removeFromSuperview];
-        [self.view setUserInteractionEnabled:YES];
+        [self.tblContentList setUserInteractionEnabled:YES];
         
         
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         [hud removeFromSuperview];
-        [self.view setUserInteractionEnabled:YES];
+        [self.tblContentList setUserInteractionEnabled:YES];
         [self presentAlert:error.localizedDescription];
         
         NSLog(@"[HTTPClient Error]: %@", error.localizedDescription);
         
     }];
+    
+}
 
+
+-(void)getCategoriesList
+{
+    
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeIndeterminate;
+    hud.labelText = @"Loading";
+    
+    [self.tblContentList addSubview:hud];
+    [self.tblContentList setUserInteractionEnabled:NO];
+    
+    NSURL *url = [NSURL URLWithString:@"http://www.creativelabinteractive.com/woke/api/index.php?route=account/account/categories"];
+    AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:url];
+    appdelegateObj = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                            API_KEY,@"client_key",
+                            @"1", @"user_id",
+                            @"fffff",@"device_id",
+                            nil];
+    
+    [httpClient postPath:@"" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSError* error;
+      NSDictionary  *categDict = [NSJSONSerialization JSONObjectWithData:responseObject
+                                                     options:kNilOptions
+                                                       error:&error];
+        
+        NSLog(@"LOGIN_SYNC = %@", categDict);
+        if ([[[categDict objectForKey:@"status"]valueForKey:@"code"]integerValue]==505){
+            categList = [[NSMutableArray alloc]init];
+            categList  = [categDict objectForKey:@"categories"];
+        }
+        else{
+            [self presentAlert:[[categDict objectForKey:@"status"]valueForKey:@"message"]];
+        }
+        [hud removeFromSuperview];
+        [self.tblContentList setUserInteractionEnabled:YES];
+        
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [hud removeFromSuperview];
+        [self.tblContentList setUserInteractionEnabled:YES];
+        [self presentAlert:error.localizedDescription];
+        
+        NSLog(@"[HTTPClient Error]: %@", error.localizedDescription);
+        
+    }];
+    
+}
+
+-(void)loadPicker
+{
+
+    _pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(10, 200, 300, 200)];
+    _pickerView.showsSelectionIndicator = YES;
+    _pickerView.hidden = NO;
+    _pickerView.delegate = (id)self;
+    [self.tblContentList addSubview:_pickerView];
+}
+
+//UIPickerViewDataSource
+
+//Columns in picker views
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView; {
+    return 1;
+}
+//Rows in each Column
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component; {
+    return [categList count];
+}
+
+//UIPickerViewDelegate
+// these methods return either a plain NSString, a NSAttributedString, or a view (e.g UILabel) to display the row for the component.
+-(NSString*) pickerView:(UIPickerView*)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    return [[categList objectAtIndex:row]valueForKey:@"category_name"];
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component;
+{
+    
+   categId = [[categList objectAtIndex:row]valueForKey:@"category_id"];
+    
+    
+ 
+
+    //Write the required logic here that should happen after you select a row in Picker View.
 }
 -(void)presentAlert:(NSString *)message
 {
@@ -295,7 +539,7 @@
     
     for (NSDictionary *tempDict in contentList) {
         
-        NSString *tempStr =  [tempDict valueForKey:@"name"];;
+        NSString *tempStr =  [tempDict valueForKey:@"first_name"];;
 
         NSComparisonResult result = [tempStr compare:searchString options:(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch) range:NSMakeRange(0, [searchString length])];
         if (result == NSOrderedSame) {

@@ -23,7 +23,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [_tableView reloadData];
     [self.tableView registerNib:[UINib nibWithNibName:@"CustomCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
     self.mapKit.delegate = (id)self;
     
@@ -37,9 +36,85 @@
     MKPointAnnotation *annotation1 = [[MKPointAnnotation alloc] init]; //Setting Sample location Annotation
     [annotation1 setCoordinate:CLLocationCoordinate2DMake(51.900708, -2.083160)]; //Add cordinates
     [self.mapKit addAnnotation:annotation1];
+    [self getCategoriesList];
+    
 
 }
-
+-(void)getCategoriesList
+{
+    
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeIndeterminate;
+    hud.labelText = @"Loading";
+    
+    [self.view addSubview:hud];
+    [self.view setUserInteractionEnabled:NO];
+    
+    NSURL *url = [NSURL URLWithString:@"http://www.creativelabinteractive.com/woke/api/index.php?route=account/account/categories"];
+    AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:url];
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                            API_KEY,@"client_key",
+                            @"1", @"user_id",
+                            @"fffff",@"device_id",
+                            nil];
+    
+    [httpClient postPath:@"" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSError* error;
+        NSDictionary  *categDict = [NSJSONSerialization JSONObjectWithData:responseObject
+                                                                   options:kNilOptions
+                                                                     error:&error];
+        
+        NSLog(@"LOGIN_SYNC = %@", categDict);
+        _categList = [[NSMutableArray alloc]init];
+        _categList  = [categDict objectForKey:@"categories"];
+        [_tableView reloadData];
+//        if ([[[categDict objectForKey:@"status"]valueForKey:@"code"]integerValue]==505){
+//            
+//
+//        }
+//        else{
+//            [self presentAlert:[[categDict objectForKey:@"status"]valueForKey:@"message"]];
+//        }
+        [hud removeFromSuperview];
+        [self.view setUserInteractionEnabled:YES];
+        
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [hud removeFromSuperview];
+        [self.view setUserInteractionEnabled:YES];
+        [self presentAlert:error.localizedDescription];
+        
+        NSLog(@"[HTTPClient Error]: %@", error.localizedDescription);
+        
+    }];
+    
+}
+-(void)presentAlert:(NSString *)message
+{
+    UIAlertController *myAlertController = [UIAlertController alertControllerWithTitle:@"WOKEAPP"
+                                                                               message: message
+                                                                        preferredStyle:UIAlertControllerStyleAlert                   ];
+    
+    //Step 2: Create a UIAlertAction that can be added to the alert
+    UIAlertAction* ok = [UIAlertAction
+                         actionWithTitle:@"OK"
+                         style:UIAlertActionStyleDefault
+                         handler:^(UIAlertAction * action)
+                         {
+                             //Do some thing here, eg dismiss the alertwindow
+                             [myAlertController dismissViewControllerAnimated:YES completion:nil];
+                             
+                         }];
+    
+    //Step 3: Add the UIAlertAction ok that we just created to our AlertController
+    [myAlertController addAction: ok];
+    
+    //Step 4: Present the alert to the user
+    [self presentViewController:myAlertController animated:YES completion:nil];
+}
 -(MKAnnotationView *)mapView:(MKMapView *)mV viewForAnnotation:(id <MKAnnotation>)annotation
 {
     AnnotationView *pinView = nil; //create MKAnnotationView Property
@@ -81,7 +156,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 10;
+    return [_categList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -98,7 +173,7 @@
         cell.switchbuttonPro.tag =indexPath.row;
 
     }
-
+    cell.labelField.text =[[_categList objectAtIndex:indexPath.row]valueForKey:@"category_name"];
     // Configure the cell before it is displayed...
     [cell.switchbuttonPro addTarget:self
                              action:@selector(clickToggle:)

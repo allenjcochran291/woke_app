@@ -11,5 +11,6 @@
 
 @interface MapViewController : UIViewController
 @property (weak, nonatomic) IBOutlet MKMapView *mapKit;
+@property (strong, nonatomic)NSMutableArray *categList;
 
 @end
