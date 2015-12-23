@@ -33,8 +33,9 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8r-nP-Ew4">
-                        <rect key="frame" x="313" y="16" width="23" height="30"/>
+                        <rect key="frame" x="308" y="16" width="30" height="30"/>
                         <constraints>
+                            <constraint firstAttribute="width" constant="30" id="Dod-0q-7Mo"/>
                             <constraint firstAttribute="height" constant="30" id="jUt-h3-d16"/>
                         </constraints>
                         <state key="normal" backgroundImage="WOK_PHONE_ICON"/>
@@ -42,11 +43,11 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="II3-tf-fwm" firstAttribute="top" secondItem="AaW-NA-axz" secondAttribute="bottom" constant="3" id="2k6-Hp-4IX"/>
-                    <constraint firstItem="U8r-nP-Ew4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="7Pf-ef-2nB"/>
+                    <constraint firstAttribute="trailing" secondItem="U8r-nP-Ew4" secondAttribute="trailing" constant="14" id="NOc-NV-xsv"/>
                     <constraint firstItem="AaW-NA-axz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="SWU-Ob-iuk"/>
+                    <constraint firstItem="U8r-nP-Ew4" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="XKE-o9-tbY"/>
                     <constraint firstItem="II3-tf-fwm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="23" id="YDf-tA-mqB"/>
                     <constraint firstItem="AaW-NA-axz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="19" id="a5s-MO-H0C"/>
-                    <constraint firstAttribute="trailing" secondItem="U8r-nP-Ew4" secondAttribute="trailing" constant="16" id="sdg-dL-Jul"/>
                     <constraint firstItem="U8r-nP-Ew4" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="yIb-i0-O5w"/>
                 </constraints>
             </tableViewCellContentView>

@@ -173,11 +173,12 @@
 
 
 - (IBAction)loginButtonClicked:(UIButton *)sender {
-    
+    AppDelegate* appdelegateObj = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+
     if (true) {
         [self performSegueWithIdentifier:@"sucessLogin" sender:nil];
         
-        
+        appdelegateObj.userObj.userid =[NSString stringWithFormat:@"100"];
         return;
     }
    
@@ -220,7 +221,7 @@
         
         NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
                                 API_KEY,@"client_key",
-                                _userNameTxt.text, @"email",
+                                _userNameTxt.text, @"Email",
                                 _passWordTxt.text, @"password",
                                 @"fffff",@"device_id",
                                 
@@ -235,7 +236,6 @@
             
             NSLog(@"LOGIN_SYNC = %@", json);
             if ([[[json objectForKey:@"status"]valueForKey:@"code"]integerValue]==505) {
-                AppDelegate* appdelegateObj = (AppDelegate*)[[UIApplication sharedApplication]delegate];
                 appdelegateObj.userObj.userEmail =  _userNameTxt.text;
 
               appdelegateObj.userObj.fullName =  [NSString stringWithFormat:@"%@",[[json objectForKey:@"user_info"]valueForKey:@"first_name"]];

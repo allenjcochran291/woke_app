@@ -11,7 +11,7 @@
 #import "MapTableViewCell.h"
 #import "CustomCell.h"
 #import "AnnotationView.h"
-
+#import "LocationManager.h"
 
 @interface MapViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -22,22 +22,41 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title =@"Location";
     // Do any additional setup after loading the view.
     [self.tableView registerNib:[UINib nibWithNibName:@"CustomCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
     self.mapKit.delegate = (id)self;
-    
+    [LocationManager locationManager];
     //Set Default location to zoom
     CLLocationCoordinate2D noLocation = CLLocationCoordinate2DMake(51.900708, -2.083160); //Create the CLLocation from user cordinates
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(noLocation, 50000, 50000); //Set zooming level
     MKCoordinateRegion adjustedRegion = [self.mapKit regionThatFits:viewRegion]; //add location to map
-    [self.mapKit setRegion:adjustedRegion animated:YES]; // create animation zooming
+  //  [self.mapKit setRegion:adjustedRegion animated:YES]; // create animation zooming
     
     // Place Annotation Point
     MKPointAnnotation *annotation1 = [[MKPointAnnotation alloc] init]; //Setting Sample location Annotation
     [annotation1 setCoordinate:CLLocationCoordinate2DMake(51.900708, -2.083160)]; //Add cordinates
-    [self.mapKit addAnnotation:annotation1];
-    [self getCategoriesList];
+    //[self.mapKit addAnnotation:annotation1];
     
+   // [self.mapKit showAnnotations:self.mapKit.annotations animated:YES];
+    self.mapKit.showsUserLocation = YES;
+    [self getCategoriesList];
+
+}
+- (void)centerOnCoordinate:(CLLocationCoordinate2D)coordinate {
+    CGFloat fiveMileRadius = (CGFloat)8046.72;
+    MKCoordinateRegion newRegion = MKCoordinateRegionMakeWithDistance(coordinate, fiveMileRadius, fiveMileRadius);
+    [self.mapKit setRegion:newRegion animated:YES];
+    
+   
+}
+-(void)viewDidAppear:(BOOL)animated
+{
+
+}
+-(void)refreshMap
+{
+    [self centerOnCoordinate:self.mapKit.userLocation.coordinate];
 
 }
 -(void)getCategoriesList
@@ -68,8 +87,19 @@
         
         NSLog(@"LOGIN_SYNC = %@", categDict);
         _categList = [[NSMutableArray alloc]init];
-        _categList  = [categDict objectForKey:@"categories"];
+        _categList  = [[categDict objectForKey:@"categories"]mutableCopy];
+        NSDictionary *dict =@{
+                              @"category_id" : @"12",
+            @"category_name" : @"Me"
+            };
+        [_categList addObject:dict];
         [_tableView reloadData];
+        [self centerOnCoordinate:self.mapKit.userLocation.coordinate];
+        [NSTimer scheduledTimerWithTimeInterval:2.0
+                                         target:self
+                                       selector:@selector(refreshMap)
+                                       userInfo:nil
+                                        repeats:NO];
 //        if ([[[categDict objectForKey:@"status"]valueForKey:@"code"]integerValue]==505){
 //            
 //
@@ -124,7 +154,7 @@
     if ( pinView == nil )
         pinView = [[AnnotationView alloc]
                    initWithAnnotation:annotation reuseIdentifier:defaultPinID]; // init pinView with ID
-    
+    pinView.canShowCallout=YES;
     //[pinView addSubview:self.customView];
 //addSubview:self.customView.center = CGPointMake(self.customView.bounds.size.width*0.1f, -self.customView.bounds.size.height*0.5f);
     
@@ -158,7 +188,9 @@
     // Return the number of rows in the section.
     return [_categList count];
 }
+-(void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view{
 
+}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // We are looking for cells with the Cell identifier
@@ -170,9 +202,10 @@
     if(cell == nil)
     {
         cell = [[CustomCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-        cell.switchbuttonPro.tag =indexPath.row;
 
     }
+    cell.switchbuttonPro.tag =indexPath.row;
+
     cell.labelField.text =[[_categList objectAtIndex:indexPath.row]valueForKey:@"category_name"];
     // Configure the cell before it is displayed...
     [cell.switchbuttonPro addTarget:self
@@ -181,10 +214,51 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
--(void) clickToggle:(id) sender {
+-(void) clickToggle:(UIButton *) sender {
     
+    [self centerOnCoordinate:self.mapKit.userLocation.coordinate];
     BOOL isSelected = [(UIButton *)sender isSelected];
     [(UIButton *) sender setSelected:!isSelected];
+    
+    if (sender.tag==0) {
+        [self.mapKit removeAnnotations:self.mapKit.annotations];
+
+        MKPointAnnotation *annotation1 = [[MKPointAnnotation alloc] init]; //Setting Sample location Annotation
+        [annotation1 setCoordinate:CLLocationCoordinate2DMake((self.mapKit.userLocation.location.coordinate.latitude+0.1000939), (self.mapKit.userLocation.location.coordinate.longitude+0.84949949))]; //Add cordinates
+        [self.mapKit addAnnotation:annotation1];
+        
+        [self.mapKit showAnnotations:self.mapKit.annotations animated:YES];
+    }
+    else  if (sender.tag==0)
+    {
+        [self.mapKit removeAnnotations:self.mapKit.annotations];
+        self.mapKit.showsUserLocation= !self.mapKit.showsUserLocation;
+        [self.mapKit showAnnotations:self.mapKit.annotations animated:YES];
+
+    }
+    else{
+        [self.mapKit removeAnnotations:self.mapKit.annotations];
+
+        MKPointAnnotation *annotation1 = [[MKPointAnnotation alloc] init]; //Setting Sample location Annotation
+        [annotation1 setCoordinate:CLLocationCoordinate2DMake((self.mapKit.userLocation.location.coordinate.latitude+0.0000939), (self.mapKit.userLocation.location.coordinate.longitude+0.084949949))]; //Add cordinates
+        [self.mapKit addAnnotation:annotation1];
+        
+        MKPointAnnotation *annotation2 = [[MKPointAnnotation alloc] init]; //Setting Sample location Annotation
+        [annotation2 setCoordinate:CLLocationCoordinate2DMake((self.mapKit.userLocation.location.coordinate.latitude+0.0400939), (self.mapKit.userLocation.location.coordinate.longitude+0.084949949))]; //Add cordinates
+        [self.mapKit addAnnotation:annotation2];
+        
+        MKPointAnnotation *annotation3 = [[MKPointAnnotation alloc] init]; //Setting Sample location Annotation
+        [annotation3 setCoordinate:CLLocationCoordinate2DMake((self.mapKit.userLocation.location.coordinate.latitude+0.0500939), (self.mapKit.userLocation.location.coordinate.longitude+0.084949949))]; //Add cordinates
+        [self.mapKit addAnnotation:annotation3];
+        
+        MKPointAnnotation *annotation4 = [[MKPointAnnotation alloc] init]; //Setting Sample location Annotation
+        [annotation4 setCoordinate:CLLocationCoordinate2DMake((self.mapKit.userLocation.location.coordinate.latitude+0.0220939), (self.mapKit.userLocation.location.coordinate.longitude+0.084949949))]; //Add cordinates
+        [self.mapKit addAnnotation:annotation4];
+        [self.mapKit showAnnotations:self.mapKit.annotations animated:YES];
+
+    
+    }
+  
 }
 /*
  // Override to support conditional editing of the table view.

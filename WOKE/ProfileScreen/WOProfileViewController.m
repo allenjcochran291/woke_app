@@ -465,7 +465,7 @@ if (indexPath.section == 0) {
             NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
                                     API_KEY,@"client_key",
                                     @"fffff",@"device_id",
-                                   [self.appdelegateObj.userObj.userid empty],@"user_id",
+                                    [self.appdelegateObj.userObj.userid empty],@"user_id",
                                     [self.appdelegateObj.userObj.userEmail empty],@"email",
                                     [self.appdelegateObj.userObj.fullName empty],@"first_name",
                                     @"",@"last_name",
@@ -631,6 +631,7 @@ if (indexPath.section == 0) {
                     CGImageRef cgref = [self.appdelegateObj.userObj.profileImage CGImage];
                     CIImage *cim = [self.appdelegateObj.userObj.profileImage CIImage];
                     _isupdateProfile=YES;
+                    self.appdelegateObj.userObj.userid = userid;
                     self.appdelegateObj.isupdateProfile=YES;
                     if (cim == nil && cgref == NULL)
                     {

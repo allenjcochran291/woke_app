@@ -353,7 +353,7 @@
             </objects>
             <point key="canvasLocation" x="-1072.5" y="-3560"/>
         </scene>
-        <!--Item-->
+        <!--Location-->
         <scene sceneID="1iB-hh-bvn">
             <objects>
                 <viewController id="ot5-WQ-tdn" customClass="MapViewController" sceneMemberID="viewController">
@@ -376,7 +376,8 @@
                                         <exclude reference="9vQ-DO-byc"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="403" width="600" height="197"/>
                                     <mask key="constraints">
                                         <include reference="9vQ-DO-byc"/>
                                     </mask>
@@ -397,7 +398,8 @@
                                         <exclude reference="Nc9-ZN-BCw"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
                                     <mask key="constraints">
                                         <include reference="Nc9-ZN-BCw"/>
                                     </mask>
@@ -405,6 +407,9 @@
                             </view>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cvd-lR-K1P">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="60" width="600" height="344"/>
+                                </variation>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -461,7 +466,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="adh-wA-64A"/>
+                    <tabBarItem key="tabBarItem" title="Location" image="00053_WOKE_BOTTNAV_LOCA" id="adh-wA-64A"/>
                     <connections>
                         <outlet property="mapKit" destination="cvd-lR-K1P" id="Byq-J9-8HB"/>
                         <outlet property="tableView" destination="TZU-sW-wqz" id="SfO-Bu-4be"/>
@@ -471,7 +476,7 @@
             </objects>
             <point key="canvasLocation" x="-91.5" y="-3078"/>
         </scene>
-        <!--Item-->
+        <!--Mates-->
         <scene sceneID="IVb-mA-B1o">
             <objects>
                 <viewController id="gOl-Ua-AhI" customClass="WOMatesViewController" sceneMemberID="viewController">
@@ -580,7 +585,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="mHO-zc-kta"/>
+                    <tabBarItem key="tabBarItem" title="Mates" image="00053_WOKE_BOTTNAV_MATES" selectedImage="00053_WOKE_BOTTNAV_MATES" id="mHO-zc-kta"/>
                     <connections>
                         <outlet property="searchBar" destination="Vra-b9-kRN" id="ZvH-08-Mf7"/>
                         <outlet property="searchBarController" destination="m6n-2v-CLF" id="gTF-X2-cG2"/>
@@ -1407,7 +1412,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="WOKE_BACKGROUND" translatesAutoresizingMaskIntoConstraints="NO" id="RPT-af-4it">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WOKE_BACKGROUND" translatesAutoresizingMaskIntoConstraints="NO" id="RPT-af-4it">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tw0-RX-ayL">
@@ -1460,7 +1465,8 @@
                                                 <exclude reference="bJP-wt-a4e"/>
                                             </mask>
                                         </variation>
-                                        <variation key="widthClass=compact">
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="451" y="3" width="66" height="30"/>
                                             <mask key="constraints">
                                                 <include reference="YUE-5G-NSn"/>
                                                 <include reference="bJP-wt-a4e"/>
@@ -1486,7 +1492,8 @@
                                                 <exclude reference="x1s-Se-VEU"/>
                                             </mask>
                                         </variation>
-                                        <variation key="widthClass=compact">
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="539" y="2" width="46" height="30"/>
                                             <mask key="constraints">
                                                 <include reference="eSn-CI-qh4"/>
                                                 <include reference="x1s-Se-VEU"/>
@@ -1524,7 +1531,8 @@
                                         <exclude reference="QZt-Ul-61Y"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="20" width="600" height="36"/>
                                     <mask key="subviews">
                                         <include reference="l7b-5k-Bkj"/>
                                         <include reference="yNj-oa-1jG"/>
@@ -1556,7 +1564,8 @@
                                         <exclude reference="UQL-ar-I83"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="29" y="53" width="542" height="3"/>
                                     <mask key="constraints">
                                         <include reference="UQL-ar-I83"/>
                                     </mask>
@@ -2278,7 +2287,8 @@
                                                             <exclude reference="K7z-Zd-CiN"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact">
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="81" y="12" width="315" height="21"/>
                                                         <mask key="constraints">
                                                             <include reference="K7z-Zd-CiN"/>
                                                         </mask>
@@ -2466,7 +2476,8 @@
                                                             <exclude reference="PoI-gg-RBs"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact">
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="92" y="11" width="95" height="21"/>
                                                         <mask key="constraints">
                                                             <include reference="PoI-gg-RBs"/>
                                                         </mask>
@@ -2477,6 +2488,9 @@
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                     <color key="textColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="171" y="40" width="16" height="21"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -2551,6 +2565,9 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="56" width="600" height="544"/>
+                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="vXB-CJ-uOZ" id="fX5-xv-YUY"/>
                                     <outlet property="delegate" destination="vXB-CJ-uOZ" id="mSC-bN-3sm"/>
@@ -2630,7 +2647,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="wf1-2H-1KL"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="00053_WOKE_BOTTNAV_HOME" selectedImage="00053_WOKE_BOTTNAV_HOME" id="wf1-2H-1KL"/>
                     <connections>
                         <outlet property="logoutButton" destination="aqK-as-oe4" id="Hob-Lc-kM8"/>
                         <outlet property="profileTableView" destination="X46-Uq-k5C" id="G6f-mx-0oh"/>
@@ -2655,6 +2672,9 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WOKE_BACKGROUND" translatesAutoresizingMaskIntoConstraints="NO" id="Qs4-2g-6OH">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Great Now add your mates!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEV-4e-h2h">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -2671,7 +2691,8 @@
                                         <exclude reference="tl8-z8-H02"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="168" y="146" width="264" height="125"/>
                                     <mask key="constraints">
                                         <include reference="bvE-Dw-ufJ"/>
                                         <include reference="tl8-z8-H02"/>
@@ -2699,7 +2720,8 @@
                                         <exclude reference="vBM-kO-kGB"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="187" y="478" width="227" height="32"/>
                                     <mask key="constraints">
                                         <include reference="gAg-Xr-nAc"/>
                                         <include reference="vBM-kO-kGB"/>
@@ -2778,6 +2800,9 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WOKE_BACKGROUND" translatesAutoresizingMaskIntoConstraints="NO" id="CFA-lk-JgM">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                </variation>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1F-2Q-t1d">
                                 <rect key="frame" x="191" y="455" width="218" height="30"/>
@@ -2800,7 +2825,8 @@
                                         <exclude reference="eh8-BL-KN4"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="187" y="478" width="227" height="32"/>
                                     <mask key="constraints">
                                         <include reference="KHs-U3-GWw"/>
                                         <include reference="eh8-BL-KN4"/>
@@ -2830,7 +2856,8 @@
                                         <exclude reference="zZh-W8-YBI"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="149" y="115" width="303" height="286"/>
                                     <mask key="constraints">
                                         <include reference="0yN-5a-cYf"/>
                                         <include reference="zZh-W8-YBI"/>
@@ -2891,7 +2918,7 @@
             </objects>
             <point key="canvasLocation" x="1362" y="-3813"/>
         </scene>
-        <!--Item-->
+        <!--Location-->
         <scene sceneID="EnP-Lh-M9r">
             <objects>
                 <viewController id="64S-gz-Uu0" customClass="WOEditProfileViewController" sceneMemberID="viewController">
@@ -2960,7 +2987,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="AZh-N3-Z0B"/>
+                    <tabBarItem key="tabBarItem" title="Location" image="WOKE_NAV_LOCATION" id="AZh-N3-Z0B"/>
                     <connections>
                         <outlet property="tableVIew" destination="xAz-Eg-EdG" id="2Qd-BF-Dv6"/>
                     </connections>
@@ -2971,6 +2998,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="00053_WOKE_BOTTNAV_HOME" width="35" height="31"/>
+        <image name="00053_WOKE_BOTTNAV_LOCA" width="25" height="37"/>
+        <image name="00053_WOKE_BOTTNAV_MATES" width="35" height="32"/>
         <image name="00053_WOKE_ONSCRN_AVATAR_BACK" width="126" height="126"/>
         <image name="AddProfileImage" width="190" height="190"/>
         <image name="Cog" width="39" height="38"/>
@@ -2979,12 +3009,13 @@
         <image name="RedAddIcon" width="32" height="32"/>
         <image name="WOKE_BACKGROUND" width="320" height="568"/>
         <image name="WOKE_LOGO" width="196" height="55"/>
+        <image name="WOKE_NAV_LOCATION" width="24" height="21"/>
         <image name="WOK_OFFICE_ICON" width="23" height="26"/>
         <image name="email1" width="203" height="203"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Vhd-Kg-EnV"/>
         <segue reference="gyj-xA-3uz"/>
         <segue reference="8On-lY-kQH"/>
+        <segue reference="wbb-3O-IGC"/>
     </inferredMetricsTieBreakers>
 </document>

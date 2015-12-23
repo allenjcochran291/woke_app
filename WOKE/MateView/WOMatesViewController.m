@@ -59,14 +59,14 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
 
-
+self.title =@"Mates";
     filteredContentList = [[NSMutableArray alloc] init];
    [self getContactAuthorizationFromUser];
     [self.tblContentList registerNib:[UINib nibWithNibName:@"MateTableViewCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
     [self.searchBarController.searchResultsTableView registerNib:[UINib nibWithNibName:@"MateTableViewCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
     self.tblContentList.backgroundColor =[UIColor clearColor];
     [self loadMates:@"sa"];
-   
+    [self.tblContentList setBackgroundColor:[UIColor clearColor]];
     [self.tblContentList reloadData];
 }
 -(NSMutableArray *)getContactAuthorizationFromUser{
@@ -229,11 +229,44 @@
     }
     cell.backgroundColor =[UIColor clearColor];
     // Configure the cell before it is displayed...
+    
+     if (self.segment.selectedSegmentIndex ==2) {
+        
+         [cell.inviteButton setBackgroundImage:[UIImage imageNamed:@"Invite-100"]
+                             forState:UIControlStateNormal];
+     }
+    else
+    {
+        
+            if (isSearching) {
+        if ( [[[filteredContentList objectAtIndex:indexPath.row] valueForKey:@"isalreadymate"]boolValue]) {
+            [cell.inviteButton setBackgroundImage:[UIImage imageNamed:@"Timer Filled"]
+                                         forState:UIControlStateNormal];
+        }
+        else
+        [cell.inviteButton setBackgroundImage:[UIImage imageNamed:@"Add User-100"]
+                                     forState:UIControlStateNormal];
+            }
+        else
+        {
+            if ( [[[contentList objectAtIndex:indexPath.row] valueForKey:@"isalreadymate"]boolValue]) {
+                [cell.inviteButton setBackgroundImage:[UIImage imageNamed:@"Timer Filled"]
+                                             forState:UIControlStateNormal];
+            }
+            else
+                [cell.inviteButton setBackgroundImage:[UIImage imageNamed:@"Add User-100"]
+                                             forState:UIControlStateNormal];
+
+        }
+
+    }
     cell.inviteButton.tag =indexPath.row;
     [cell.inviteButton addTarget:self
                           action:@selector(inviteButton:)
                 forControlEvents:UIControlEventTouchUpInside];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    [cell setBackgroundColor:[UIColor clearColor]];
+
     return cell;
     
 }
@@ -284,6 +317,8 @@
             }
             else{
                 [self presentAlert:[[json objectForKey:@"status"]valueForKey:@"message"]];
+               
+
             }
             [hud removeFromSuperview];
             [self.view setUserInteractionEnabled:YES];
@@ -313,6 +348,25 @@
 userName =  [NSString stringWithFormat:@"%@",[[contentList objectAtIndex:button.tag] valueForKey:@"user_id"]];;            phoneNo =  [[contentList objectAtIndex:button.tag] valueForKey:@"mobile_no"];;
         }
         
+        
+        if (isSearching) {
+            if ( [[[filteredContentList objectAtIndex:button.tag] valueForKey:@"isalreadymate"]boolValue]) {
+                [self presentAlert:@"The Mates requested already sent!"];
+
+                return;
+            }
+           
+        }
+        else
+        {
+            if ( [[[contentList objectAtIndex:button.tag] valueForKey:@"isalreadymate"]boolValue]) {
+                [self presentAlert:@"The Mates requested already sent!"];
+
+                return;
+            }
+            
+            
+        }
         mateUserId = userName;
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         hud.mode = MBProgressHUDModeIndeterminate;
@@ -327,7 +381,7 @@ userName =  [NSString stringWithFormat:@"%@",[[contentList objectAtIndex:button.
         NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
                                 API_KEY,@"client_key",
                                 mateUserId, @"mate_user_id",
-                                @"1", @"user_id",
+                                [appdelegateObj.userObj.userid empty], @"user_id",
                                 @"fffff",@"device_id",
                                 @"21",@"category_id",
                                 nil];
@@ -345,6 +399,7 @@ userName =  [NSString stringWithFormat:@"%@",[[contentList objectAtIndex:button.
             }
             else{
                 [self presentAlert:[[json objectForKey:@"status"]valueForKey:@"message"]];
+                 [self loadMates:@"sa"];
             }
             [hud removeFromSuperview];
             [self.view setUserInteractionEnabled:YES];
@@ -382,7 +437,7 @@ userName =  [NSString stringWithFormat:@"%@",[[contentList objectAtIndex:button.
     NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
                             API_KEY,@"client_key",
                             keyWord, @"keyword",
-                            @"1", @"user_id",
+                            [appdelegateObj.userObj.userid empty], @"user_id",
                             @"fffff",@"device_id",
                             nil];
     

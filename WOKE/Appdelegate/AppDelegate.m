@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "AFHTTPRequestOperation.h"
+#import "LocationManager.h"
 #import <AddressBook/AddressBook.h>
 @interface AppDelegate ()
 
@@ -20,7 +21,8 @@
     _userObj = [[WOUserModel alloc]init];
     
   
-
+    // Fire up location manager
+    [LocationManager locationManager];
     // Override point for customization after application launch.
     return YES;
 }
