@@ -11,7 +11,10 @@
 #import "AppDelegate.h"
 #import "MateTableViewCell.h"
 
+#import <QuartzCore/QuartzCore.h>
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
+//Then change yourSearchBar border:
 @implementation WOMatesViewController
 @synthesize tblContentList;
 @synthesize searchBar;
@@ -29,21 +32,35 @@
 
 
 
--(IBAction) segmentedControlIndexChanged
+-(IBAction) segmentedControlIndexChanged:(UIButton *)sender
 {
     
     isSearching =NO;
-    switch (self.segment.selectedSegmentIndex) {
+    switch (sender.tag) {
         case 0:
             contentList  = [_matesDict objectForKey:@"user_info"];
+            [self.matesButton setBackgroundImage:[UIImage imageNamed:@"00053_WOKE_ICONS_MATES_TAB_ON"] forState:UIControlStateNormal];
+           [self.matesGroupButton setBackgroundImage:[UIImage imageNamed:@"00053_WOKE_ICONS_MATE_GROUPS_TAB_OFF"] forState:UIControlStateNormal];
+             [self.contactButton setBackgroundImage:[UIImage imageNamed:@"00053_WOKE_ICONS_CONTACTS_TAB_OFF"] forState:UIControlStateNormal];
             [self.tblContentList reloadData];
             break;
         case 1:
             contentList  = [[NSMutableArray alloc]init];
+            [self.matesButton setBackgroundImage:[UIImage imageNamed:@"00053_WOKE_ICONS_MATES_TAB_OFF"] forState:UIControlStateNormal];
+            [self.matesGroupButton setBackgroundImage:[UIImage imageNamed:@"00053_WOKE_ICONS_MATE_GROUPS_TAB_ON"] forState:UIControlStateNormal];
+            [self.contactButton setBackgroundImage:[UIImage imageNamed:@"00053_WOKE_ICONS_CONTACTS_TAB_OFF"] forState:UIControlStateNormal];
+
             [self.tblContentList  reloadData];
             break;
         case 2:
              [self setContacts];
+
+            [self.matesButton setBackgroundImage:[UIImage imageNamed:@"00053_WOKE_ICONS_MATES_TAB_OFF"] forState:UIControlStateNormal];
+            [self.matesGroupButton setBackgroundImage:[UIImage imageNamed:@"00053_WOKE_ICONS_MATE_GROUPS_TAB_OFF"] forState:UIControlStateNormal];
+            [self.contactButton setBackgroundImage:[UIImage imageNamed:@"00053_WOKE_ICONS_CONTACTS_TAB_ON"] forState:UIControlStateNormal];
+
+            [self.tblContentList  reloadData];
+
             break;
         default:
             break;
@@ -54,8 +71,39 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UITextField *txfSearchField = [self.searchBar valueForKey:@"_searchField"];
+    txfSearchField.backgroundColor = [UIColor redColor];
 	// Do any additional setup after loading the view, typically from a nib.
-    
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+    {
+        for (id object in [[[self.searchBar subviews] objectAtIndex:0] subviews])
+        {
+            if ([object isKindOfClass:[UITextField class]])
+            {
+                UITextField *textFieldObject = (UITextField *)object;
+                textFieldObject.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+                textFieldObject.layer.borderWidth = 1.0;
+                textFieldObject.tintColor =[UIColor whiteColor];
+                break;
+            }
+        }
+    }
+    else
+    {
+        for (id object in [self.searchBar subviews])
+        {
+            if ([object isKindOfClass:[UITextField class]])
+            {
+                UITextField *textFieldObject = (UITextField *)object;
+                textFieldObject.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+                textFieldObject.layer.borderWidth = 1.0;
+                textFieldObject.tintColor =[UIColor whiteColor];
+
+                break;
+            }
+        }
+    }
+
     self.tblContentList.separatorStyle = UITableViewCellSeparatorStyleNone;
 
 self.title =@"Mates";
@@ -240,12 +288,12 @@ self.title =@"Mates";
         cell.phoneNo.text =  [[filteredContentList objectAtIndex:indexPath.row] valueForKey:@"mobile_no"];;
         NSLog(@"userName : %@   --- %lu",[[filteredContentList objectAtIndex:indexPath.row] valueForKey:@"first_name"], (unsigned long)[filteredContentList count]);
         
-        [cell.profileImageView setImageWithURL:[NSURL URLWithString:[[filteredContentList objectAtIndex:indexPath.row] valueForKey:@"profile_photo_path"]]];
+        [cell.profileImageView setImageWithURL:[NSURL URLWithString:[[filteredContentList objectAtIndex:indexPath.row] valueForKey:@"profile_photo_path"]]placeholderImage:[UIImage imageNamed:@"00053_WOKE_ONSCRN_AVATAR-OFF"]];
         }
     else {
         cell.userTitle.text =  [[contentList objectAtIndex:indexPath.row] valueForKey:@"first_name"];;
         cell.phoneNo.text =  [[contentList objectAtIndex:indexPath.row] valueForKey:@"mobile_no"];;
-               [cell.profileImageView setImageWithURL:[NSURL URLWithString:[[contentList objectAtIndex:indexPath.row] valueForKey:@"profile_photo_path"]]];
+               [cell.profileImageView setImageWithURL:[NSURL URLWithString:[[contentList objectAtIndex:indexPath.row] valueForKey:@"profile_photo_path"]]placeholderImage:[UIImage imageNamed:@"00053_WOKE_ONSCRN_AVATAR-OFF"]];
         
         
     }
@@ -258,7 +306,12 @@ self.title =@"Mates";
      
                     if (isSearching) {
                  NSData* data =[[filteredContentList objectAtIndex:indexPath.row] valueForKey:@"image"];
-                 [cell.profileImageView setImage:[UIImage imageWithData:data]];
+                        if (data!=nil) {
+                            [cell.profileImageView setImage:[UIImage imageWithData:data]];
+
+                        }
+                        else
+                            [cell.profileImageView setImage:[UIImage imageNamed:@"00053_WOKE_ONSCRN_AVATAR-OFF"]];
                         NSString *checkString = [[filteredContentList objectAtIndex:indexPath.row]valueForKey:@"isAlreadyThere"];
                         
                         if (![checkString isEqualToString:@"YES"]) {

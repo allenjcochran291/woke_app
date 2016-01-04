@@ -56,6 +56,8 @@
 		B9EC55F01C21DE710098FD45 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EC55EE1C21DE710098FD45 /* MapViewController.m */; settings = {ASSET_TAGS = (); }; };
 		B9EC55F31C21DE930098FD45 /* MapTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EC55F21C21DE930098FD45 /* MapTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		B9EC55F41C21DE930098FD45 /* MapTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EC55F21C21DE930098FD45 /* MapTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		B9ED0AE71C3A83A300599F8C /* WOActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9ED0AE61C3A83A300599F8C /* WOActivityViewController.m */; settings = {ASSET_TAGS = (); }; };
+		B9ED0AE81C3A83A300599F8C /* WOActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9ED0AE61C3A83A300599F8C /* WOActivityViewController.m */; settings = {ASSET_TAGS = (); }; };
 		B9EDB72C1C1F154500A77E34 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B9444ADB1C0624FE0049FF47 /* AFURLConnectionOperation.m */; settings = {ASSET_TAGS = (); }; };
 		B9EDB72E1C1F154500A77E34 /* WOEditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9CBD9211BC1250B00167969 /* WOEditProfileViewController.m */; settings = {ASSET_TAGS = (); }; };
 		B9EDB72F1C1F154500A77E34 /* WOCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B97EED8A1C0CD2F80089087B /* WOCreateViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -221,6 +223,8 @@
 		B9EC55EE1C21DE710098FD45 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		B9EC55F11C21DE930098FD45 /* MapTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapTableViewCell.h; sourceTree = "<group>"; };
 		B9EC55F21C21DE930098FD45 /* MapTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapTableViewCell.m; sourceTree = "<group>"; };
+		B9ED0AE51C3A83A300599F8C /* WOActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOActivityViewController.h; sourceTree = "<group>"; };
+		B9ED0AE61C3A83A300599F8C /* WOActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOActivityViewController.m; sourceTree = "<group>"; };
 		B9EDB75B1C1F154500A77E34 /* WOKE copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WOKE copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9EDB75C1C1F154600A77E34 /* WOKE copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "WOKE copy-Info.plist"; path = "/Users/dheenadayalanselvaraj/Desktop/WOKE_current_source/WOKE copy-Info.plist"; sourceTree = "<absolute>"; };
 		B9EEC6F01C27C527005DCA83 /* MateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MateTableViewCell.h; sourceTree = "<group>"; };
@@ -304,6 +308,7 @@
 		B90D8B3A1BB9C2240090741E /* WOKE */ = {
 			isa = PBXGroup;
 			children = (
+				B9ED0AE41C3A838500599F8C /* ActivityFeed */,
 				B9934BE01C29C0C000600EC3 /* Location */,
 				B9EEC6E31C27B91E005DCA83 /* MateView */,
 				B9F75E611C18987A0049FE22 /* Model */,
@@ -503,6 +508,15 @@
 				B9EEC6F21C27C527005DCA83 /* MateTableViewCell.xib */,
 			);
 			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		B9ED0AE41C3A838500599F8C /* ActivityFeed */ = {
+			isa = PBXGroup;
+			children = (
+				B9ED0AE51C3A83A300599F8C /* WOActivityViewController.h */,
+				B9ED0AE61C3A83A300599F8C /* WOActivityViewController.m */,
+			);
+			path = ActivityFeed;
 			sourceTree = "<group>";
 		};
 		B9EEC6E31C27B91E005DCA83 /* MateView */ = {
@@ -732,6 +746,7 @@
 				B9CBD92D1BC1255C00167969 /* WOProfileContactTableViewCell.m in Sources */,
 				B9F75E671C189A6C0049FE22 /* WOValidation+NSString.m in Sources */,
 				B9444AE91C0624FE0049FF47 /* AFXMLRequestOperation.m in Sources */,
+				B9ED0AE71C3A83A300599F8C /* WOActivityViewController.m in Sources */,
 				B9CBD91F1BC124FB00167969 /* WOProfileFooterTableViewCell.m in Sources */,
 				B9CBD92C1BC1255C00167969 /* WOProfileAddressTableViewCell.m in Sources */,
 				B9F75E641C1898A10049FE22 /* WOUserModel.m in Sources */,
@@ -800,6 +815,7 @@
 				B9EDB7391C1F154500A77E34 /* WOProfileContactTableViewCell.m in Sources */,
 				B9EDB73A1C1F154500A77E34 /* WOValidation+NSString.m in Sources */,
 				B9EDB73B1C1F154500A77E34 /* AFXMLRequestOperation.m in Sources */,
+				B9ED0AE81C3A83A300599F8C /* WOActivityViewController.m in Sources */,
 				B9EDB73C1C1F154500A77E34 /* WOProfileFooterTableViewCell.m in Sources */,
 				B9EDB73D1C1F154500A77E34 /* WOProfileAddressTableViewCell.m in Sources */,
 				B9EDB73E1C1F154500A77E34 /* WOUserModel.m in Sources */,

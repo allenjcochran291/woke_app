@@ -11,7 +11,6 @@
                 <outlet property="searchBar" destination="9" id="20"/>
                 <outlet property="searchBarController" destination="10" id="21"/>
                 <outlet property="searchDisplayController" destination="10" id="12"/>
-                <outlet property="segment" destination="ilb-nq-sDh" id="uCD-ct-ecA"/>
                 <outlet property="tblContentList" destination="18" id="19"/>
                 <outlet property="view" destination="6" id="7"/>
             </connections>
@@ -29,15 +28,6 @@
                         <outlet property="delegate" destination="-1" id="23"/>
                     </connections>
                 </tableView>
-                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ilb-nq-sDh">
-                    <rect key="frame" x="0.0" y="37" width="320" height="29"/>
-                    <segments>
-                        <segment title="Mates"/>
-                        <segment title="Mates Groups"/>
-                        <segment title="Contacts"/>
-                    </segments>
-                    <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                </segmentedControl>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0FD-Zv-cGQ">
                     <rect key="frame" x="0.0" y="68" width="320" height="36"/>
                     <subviews>
@@ -52,20 +42,49 @@
                     </subviews>
                     <color key="backgroundColor" red="0.59215686270000001" green="0.0" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NaV-Y2-jXV">
+                    <rect key="frame" x="0.0" y="20" width="320" height="49"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8kV-pG-zKg">
+                            <rect key="frame" x="0.0" y="8" width="108" height="39"/>
+                            <state key="normal" backgroundImage="00053_WOKE_ICONS_MATES_TAB_OFF"/>
+                            <connections>
+                                <action selector="segmentedControlIndexChanged:" destination="-1" eventType="touchDragInside" id="r1T-ZV-iH4"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Psz-NR-RFm">
+                            <rect key="frame" x="107" y="8" width="123" height="39"/>
+                            <state key="normal" backgroundImage="00053_WOKE_ICONS_MATE_GROUPS_TAB_OFF"/>
+                            <connections>
+                                <action selector="segmentedControlIndexChanged" destination="-1" eventType="touchUpInside" id="ufs-gr-gVR"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8e-DR-abL">
+                            <rect key="frame" x="229" y="6" width="91" height="41"/>
+                            <state key="normal" backgroundImage="00053_WOKE_ICONS_CONTACTS_TAB_OFF"/>
+                            <connections>
+                                <action selector="segmentedControlIndexChanged:" destination="-1" eventType="touchUpInside" id="mYf-Hq-kO7"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
             <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="18" firstAttribute="top" secondItem="0FD-Zv-cGQ" secondAttribute="bottom" constant="4" id="04R-jv-q6H"/>
-                <constraint firstItem="ilb-nq-sDh" firstAttribute="trailing" secondItem="18" secondAttribute="trailing" id="0ld-nE-lbn"/>
-                <constraint firstItem="0FD-Zv-cGQ" firstAttribute="top" secondItem="ilb-nq-sDh" secondAttribute="bottom" constant="3" id="3mW-rB-QaG"/>
+                <constraint firstItem="18" firstAttribute="top" secondItem="0FD-Zv-cGQ" secondAttribute="bottom" constant="4" id="1x4-iB-yyq"/>
+                <constraint firstAttribute="trailing" secondItem="18" secondAttribute="trailing" id="6Gs-OZ-Hfl"/>
+                <constraint firstItem="NaV-Y2-jXV" firstAttribute="top" secondItem="6" secondAttribute="top" constant="20" id="APb-nw-LUQ"/>
                 <constraint firstAttribute="bottom" secondItem="0FD-Zv-cGQ" secondAttribute="bottom" constant="356" id="H9b-m2-Es4"/>
-                <constraint firstAttribute="trailing" secondItem="ilb-nq-sDh" secondAttribute="trailing" id="SiI-ai-B1H"/>
-                <constraint firstItem="0FD-Zv-cGQ" firstAttribute="trailing" secondItem="ilb-nq-sDh" secondAttribute="trailing" id="Soe-1u-9Di"/>
-                <constraint firstItem="0FD-Zv-cGQ" firstAttribute="leading" secondItem="ilb-nq-sDh" secondAttribute="leading" id="a28-6P-gpR"/>
-                <constraint firstItem="ilb-nq-sDh" firstAttribute="leading" secondItem="6" secondAttribute="leading" id="kpC-JK-mho"/>
-                <constraint firstItem="ilb-nq-sDh" firstAttribute="leading" secondItem="18" secondAttribute="leading" id="nqf-yT-kOX"/>
+                <constraint firstItem="0FD-Zv-cGQ" firstAttribute="top" secondItem="6" secondAttribute="top" constant="68" id="Ksr-N8-q8t"/>
+                <constraint firstItem="18" firstAttribute="trailing" secondItem="0FD-Zv-cGQ" secondAttribute="trailing" id="O0w-5i-R0Y"/>
+                <constraint firstItem="18" firstAttribute="top" secondItem="NaV-Y2-jXV" secondAttribute="bottom" constant="39" id="hM9-Tb-Ni7"/>
+                <constraint firstItem="18" firstAttribute="leading" secondItem="NaV-Y2-jXV" secondAttribute="leading" id="jdX-4w-ECc"/>
+                <constraint firstItem="18" firstAttribute="trailing" secondItem="NaV-Y2-jXV" secondAttribute="trailing" id="jl8-1V-e0p"/>
+                <constraint firstItem="18" firstAttribute="leading" secondItem="6" secondAttribute="leading" id="pQX-bP-k0S"/>
                 <constraint firstAttribute="bottom" secondItem="18" secondAttribute="bottom" id="qCT-pc-e5R"/>
-                <constraint firstItem="ilb-nq-sDh" firstAttribute="top" secondItem="6" secondAttribute="top" constant="37" id="usc-vz-nhI"/>
+                <constraint firstItem="18" firstAttribute="leading" secondItem="0FD-Zv-cGQ" secondAttribute="leading" id="t8n-o0-qqC"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="151" y="497"/>
@@ -80,4 +99,9 @@
             </connections>
         </searchDisplayController>
     </objects>
+    <resources>
+        <image name="00053_WOKE_ICONS_CONTACTS_TAB_OFF" width="143" height="47"/>
+        <image name="00053_WOKE_ICONS_MATES_TAB_OFF" width="108" height="47"/>
+        <image name="00053_WOKE_ICONS_MATE_GROUPS_TAB_OFF" width="206" height="47"/>
+    </resources>
 </document>

@@ -29,6 +29,9 @@
 @property (strong, nonatomic) IBOutlet UITableView *tblContentList;
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segment;
+@property (weak, nonatomic) IBOutlet UIButton *matesButton;
+@property (weak, nonatomic) IBOutlet UIButton *matesGroupButton;
+@property (weak, nonatomic) IBOutlet UIButton *contactButton;
 
 @property (strong, nonatomic)NSDictionary* matesDict;
 @property (strong, nonatomic) IBOutlet UISearchDisplayController *searchBarController;
