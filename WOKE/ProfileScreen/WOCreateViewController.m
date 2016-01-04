@@ -151,6 +151,10 @@
 {
     [super viewWillDisappear:animated];
     // unregister for keyboard notifications while not visible.
+    AppDelegate* appdelegateObj = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+
+    appdelegateObj.navigationController =self.navigationController;
+
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:UIKeyboardWillShowNotification
                                                   object:nil];

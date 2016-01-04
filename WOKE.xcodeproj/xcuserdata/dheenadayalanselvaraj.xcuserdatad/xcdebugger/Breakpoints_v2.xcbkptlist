@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WOKE/MateView/WOMatesViewController.m"
-            timestampString = "473610413.007616"
+            timestampString = "473620122.133881"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "691"
-            endingLineNumber = "691"
+            startingLineNumber = "693"
+            endingLineNumber = "693"
             landmarkName = "-loadcontacts:"
             landmarkType = "5">
          </BreakpointContent>
@@ -36,11 +36,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WOKE/MateView/WOMatesViewController.m"
-            timestampString = "473610413.007616"
+            timestampString = "473620122.133881"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "654"
-            endingLineNumber = "654"
+            startingLineNumber = "656"
+            endingLineNumber = "656"
             landmarkName = "-loadcontacts:"
             landmarkType = "5">
          </BreakpointContent>
@@ -52,11 +52,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WOKE/MateView/WOMatesViewController.m"
-            timestampString = "473610413.007616"
+            timestampString = "473620122.133881"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "308"
-            endingLineNumber = "308"
+            startingLineNumber = "310"
+            endingLineNumber = "310"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -68,11 +68,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WOKE/MateView/WOMatesViewController.m"
-            timestampString = "473610413.007616"
+            timestampString = "473620122.133881"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "679"
-            endingLineNumber = "679"
+            startingLineNumber = "681"
+            endingLineNumber = "681"
             landmarkName = "-loadcontacts:"
             landmarkType = "5">
          </BreakpointContent>
@@ -84,11 +84,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WOKE/MateView/WOMatesViewController.m"
-            timestampString = "473610413.007616"
+            timestampString = "473620122.133881"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "233"
-            endingLineNumber = "233"
+            startingLineNumber = "235"
+            endingLineNumber = "235"
             landmarkName = "-setContacts"
             landmarkType = "5">
          </BreakpointContent>
@@ -100,11 +100,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WOKE/ProfileScreen/WOProfileViewController.m"
-            timestampString = "473586213.576739"
+            timestampString = "473619494.365747"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "474"
-            endingLineNumber = "474"
+            startingLineNumber = "472"
+            endingLineNumber = "472"
             landmarkName = "-doneAction:"
             landmarkType = "5">
          </BreakpointContent>
@@ -116,11 +116,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WOKE/ProfileScreen/WOProfileViewController.m"
-            timestampString = "473586213.576739"
+            timestampString = "473619494.365747"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "531"
-            endingLineNumber = "531"
+            startingLineNumber = "529"
+            endingLineNumber = "529"
             landmarkName = "-doneAction:"
             landmarkType = "5">
          </BreakpointContent>
@@ -132,11 +132,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WOKE/ProfileScreen/WOProfileViewController.m"
-            timestampString = "473586213.576739"
+            timestampString = "473619494.365747"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "562"
-            endingLineNumber = "562"
+            startingLineNumber = "560"
+            endingLineNumber = "560"
             landmarkName = "-doneAction:"
             landmarkType = "5">
          </BreakpointContent>
@@ -148,11 +148,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WOKE/ProfileScreen/WOProfileViewController.m"
-            timestampString = "473586213.576739"
+            timestampString = "473619494.365747"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "558"
-            endingLineNumber = "558"
+            startingLineNumber = "556"
+            endingLineNumber = "556"
             landmarkName = "-doneAction:"
             landmarkType = "5">
          </BreakpointContent>
@@ -164,11 +164,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WOKE/ProfileScreen/WOProfileViewController.m"
-            timestampString = "473586213.576739"
+            timestampString = "473619494.365747"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "569"
-            endingLineNumber = "569"
+            startingLineNumber = "567"
+            endingLineNumber = "567"
             landmarkName = "-doneAction:"
             landmarkType = "5">
          </BreakpointContent>
@@ -180,11 +180,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WOKE/ProfileScreen/WOProfileViewController.m"
-            timestampString = "473586213.576739"
+            timestampString = "473619494.365747"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "471"
-            endingLineNumber = "471"
+            startingLineNumber = "469"
+            endingLineNumber = "469"
             landmarkName = "-doneAction:"
             landmarkType = "5">
          </BreakpointContent>
@@ -196,11 +196,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WOKE/ProfileScreen/WOProfileViewController.m"
-            timestampString = "473586213.576739"
+            timestampString = "473619494.365747"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "516"
-            endingLineNumber = "516"
+            startingLineNumber = "514"
+            endingLineNumber = "514"
             landmarkName = "-doneAction:"
             landmarkType = "5">
             <Locations>
@@ -212,11 +212,11 @@
                   moduleName = "WOKE"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/dheenadayalanselvaraj/Desktop/Document/woke_app/WOKE/ProfileScreen/WOProfileViewController.m"
-                  timestampString = "473612694.367273"
+                  timestampString = "473619336.139255"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "516"
-                  endingLineNumber = "516"
+                  startingLineNumber = "515"
+                  endingLineNumber = "515"
                   offsetFromSymbolStart = "5005">
                </Location>
                <Location
@@ -227,11 +227,11 @@
                   moduleName = "WOKE"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/dheenadayalanselvaraj/Desktop/Document/woke_app/WOKE/ProfileScreen/WOProfileViewController.m"
-                  timestampString = "473612694.367459"
+                  timestampString = "473619336.139438"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "516"
-                  endingLineNumber = "516"
+                  startingLineNumber = "515"
+                  endingLineNumber = "515"
                   offsetFromSymbolStart = "79">
                </Location>
             </Locations>
@@ -244,11 +244,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WOKE/ProfileScreen/WOProfileViewController.m"
-            timestampString = "473586213.576739"
+            timestampString = "473619494.365747"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "525"
-            endingLineNumber = "525"
+            startingLineNumber = "523"
+            endingLineNumber = "523"
             landmarkName = "-doneAction:"
             landmarkType = "5">
          </BreakpointContent>
@@ -260,11 +260,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WOKE/MateView/WOMatesViewController.m"
-            timestampString = "473610413.007616"
+            timestampString = "473620122.133881"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "360"
-            endingLineNumber = "360"
+            startingLineNumber = "362"
+            endingLineNumber = "362"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -276,11 +276,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WOKE/ProfileScreen/WOProfileViewController.m"
-            timestampString = "473586213.576739"
+            timestampString = "473617695.538588"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -292,11 +292,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WOKE/ProfileScreen/WOProfileViewController.m"
-            timestampString = "473586213.576739"
+            timestampString = "473617695.538588"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "223"
-            endingLineNumber = "223"
+            startingLineNumber = "231"
+            endingLineNumber = "231"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -340,11 +340,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WOKE/ActivityFeed/WOActivityViewController.m"
-            timestampString = "473612942.701907"
+            timestampString = "473619494.365747"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "186"
-            endingLineNumber = "186"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
             landmarkName = "-settingsButtonClicked:"
             landmarkType = "5">
          </BreakpointContent>
@@ -372,11 +372,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WOKE/ProfileScreen/WOProfileViewController.m"
-            timestampString = "473610124.467184"
+            timestampString = "473619494.365747"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "472"
-            endingLineNumber = "472"
+            startingLineNumber = "470"
+            endingLineNumber = "470"
             landmarkName = "-doneAction:"
             landmarkType = "5">
          </BreakpointContent>
@@ -388,11 +388,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WOKE/MateView/WOMatesViewController.m"
-            timestampString = "473610413.007616"
+            timestampString = "473620122.133881"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "317"
-            endingLineNumber = "317"
+            startingLineNumber = "319"
+            endingLineNumber = "319"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -404,39 +404,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WOKE/MateView/WOMatesViewController.m"
-            timestampString = "473610413.007616"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "351"
-            endingLineNumber = "351"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WOKE/MateView/WOMatesViewController.m"
-            timestampString = "473610413.007616"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "689"
-            endingLineNumber = "689"
-            landmarkName = "-loadcontacts:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WOKE/MateView/WOMatesViewController.m"
-            timestampString = "473610413.007616"
+            timestampString = "473620122.133881"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "353"
@@ -452,11 +420,43 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WOKE/MateView/WOMatesViewController.m"
-            timestampString = "473611009.518144"
+            timestampString = "473620122.133881"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "306"
-            endingLineNumber = "306"
+            startingLineNumber = "691"
+            endingLineNumber = "691"
+            landmarkName = "-loadcontacts:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WOKE/MateView/WOMatesViewController.m"
+            timestampString = "473620122.133881"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "355"
+            endingLineNumber = "355"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WOKE/MateView/WOMatesViewController.m"
+            timestampString = "473620122.133881"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "308"
+            endingLineNumber = "308"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -468,11 +468,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WOKE/ActivityFeed/WOActivityViewController.m"
-            timestampString = "473612041.708473"
+            timestampString = "473619494.365747"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -484,12 +484,76 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WOKE/ActivityFeed/WOActivityViewController.m"
-            timestampString = "473612942.701907"
+            timestampString = "473619494.365747"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WOKE/MateView/WOMatesViewController.m"
+            timestampString = "473620122.133881"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "596"
+            endingLineNumber = "596"
+            landmarkName = "-loadMates:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[WOMatesViewController loadMates:]"
+                  moduleName = "WOKE"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dheenadayalanselvaraj/Desktop/Document/woke_app/WOKE/MateView/WOMatesViewController.m"
+                  timestampString = "473619336.153648"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "594"
+                  endingLineNumber = "594"
+                  offsetFromSymbolStart = "965">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__35-[WOMatesViewController loadMates:]_block_invoke"
+                  moduleName = "WOKE"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dheenadayalanselvaraj/Desktop/Document/woke_app/WOKE/MateView/WOMatesViewController.m"
+                  timestampString = "473619336.153822"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "594"
+                  endingLineNumber = "594"
+                  offsetFromSymbolStart = "70">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WOKE/ActivityFeed/WOActivityViewController.m"
+            timestampString = "473618935.858751"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

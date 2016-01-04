@@ -19,6 +19,8 @@
     NSArray *contactImageArry;
 
 }
+
+@property (weak, nonatomic) IBOutlet UIButton *editButton;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (strong, nonatomic)  UITextField *currentField;
 
@@ -120,6 +122,12 @@
 
     AppDelegate* appdelegateObj = (AppDelegate*)[[UIApplication sharedApplication]delegate];
     self.isupdateProfile = appdelegateObj.isupdateProfile;
+    if (self.isupdateProfile) {
+        [self.editButton setTitle:@"EDIT" forState:UIControlStateNormal];
+    }
+    else
+        [self.editButton setTitle:@"DONE" forState:UIControlStateNormal];
+
     
 }
 -(void)viewWillDisappear:(BOOL)animated
@@ -243,17 +251,7 @@
                 }
                 [self addBottomBorderWithColor:[UIColor lightGrayColor] andWidth:0.5 withView:cell.profileViewBackground];
                 [self addTopBorderWithColor:[UIColor lightGrayColor] andWidth:0.5 withView:cell.profileViewBackground];
-//                __weak UITableViewCell *weakCell = cell;
-//                [cell.profileImageView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.appdelegateObj.userObj.profilePath]] placeholderImage:nil success:^(NSURLRequest *request,   NSHTTPURLResponse *response, UIImage *image) {
-//                    if (weakCell)
-//                    {
-//                        weakCell.imageView.image = image;
-//                        [cell.profileImage setBackgroundImage:image forState:UIControlStateNormal];
-//                        [weakCell setNeedsLayout];
-//                    }
-//                } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
-//                    NSLog(@"Error: %@", error);
-//                }];
+
 
 
             }
@@ -407,7 +405,7 @@ if (indexPath.section == 0) {
     AppDelegate* appdelegateObj = (AppDelegate*)[[UIApplication sharedApplication]delegate];
     self.isupdateProfile=appdelegateObj.isupdateProfile =NO;
 
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    [appdelegateObj.navigationController popToRootViewControllerAnimated:YES];
 }
 
 #pragma mark - Keyboard Notifications
@@ -532,7 +530,7 @@ if (indexPath.section == 0) {
                     {
                         [hud removeFromSuperview];
                         [self.view setUserInteractionEnabled:YES];
-                        [self performSegueWithIdentifier:@"showGetStartedMatesView" sender:nil];
+//                        [self performSegueWithIdentifier:@"showGetStartedMatesView" sender:nil];
                         NSLog(@"no underlying data");
                     }
                     else
@@ -558,7 +556,7 @@ if (indexPath.section == 0) {
                             NSData *JSONData = [operation.responseString dataUsingEncoding:NSUTF8StringEncoding];
                             NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:JSONData options:NSJSONReadingMutableContainers error:nil];
                             NSDictionary *status =[jsonObject objectForKey:@"status"];
-                            [self performSegueWithIdentifier:@"showGetStartedMatesView" sender:nil];
+//                            [self performSegueWithIdentifier:@"showGetStartedMatesView" sender:nil];
                             
                             [hud removeFromSuperview];
                             [self.view setUserInteractionEnabled:YES];
@@ -655,6 +653,12 @@ if (indexPath.section == 0) {
                     CGImageRef cgref = [self.appdelegateObj.userObj.profileImage CGImage];
                     CIImage *cim = [self.appdelegateObj.userObj.profileImage CIImage];
                     _isupdateProfile=YES;
+                    if (self.isupdateProfile) {
+                        [self.editButton setTitle:@"EDIT" forState:UIControlStateNormal];
+                    }
+                    else
+                        [self.editButton setTitle:@"DONE" forState:UIControlStateNormal];
+
                     self.appdelegateObj.userObj.userid = userid;
                     self.appdelegateObj.isupdateProfile=YES;
                     if (cim == nil && cgref == NULL)

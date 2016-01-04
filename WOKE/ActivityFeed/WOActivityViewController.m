@@ -26,6 +26,7 @@
     if (appdelegateObj.userObj.profileImage!=nil) {
         [self.profileImageView setImage:appdelegateObj.userObj.profileImage];
             }
+    else
        [self.profileImageView setImageWithURL:[NSURL URLWithString:appdelegateObj.userObj.profilePath] placeholderImage:[UIImage imageNamed:@"00053_WOKE_ONSCRN_AVATAR-OFF"]];
     // Do any additional setup after loading the view.
 }

@@ -147,9 +147,9 @@
 //                                               object:nil];
 }
 -(void)viewDidAppear:(BOOL)animated{
-    self.userNameTxt.text =@"raju@raj.com";
-    self.passWordTxt.text =@"raju";
-    [self loginButtonClicked:nil];
+//    self.userNameTxt.text =@"mani@mani.com";
+//    self.passWordTxt.text =@"mani";
+//    [self loginButtonClicked:nil];
     [super viewDidAppear:animated];
 }
 - (void)viewWillDisappear:(BOOL)animated
@@ -180,7 +180,7 @@
 
 - (IBAction)loginButtonClicked:(UIButton *)sender {
     AppDelegate* appdelegateObj = (AppDelegate*)[[UIApplication sharedApplication]delegate];
-
+    appdelegateObj.navigationController =self.navigationController;
 //    if (true) {
 //        [self performSegueWithIdentifier:@"sucessLogin" sender:nil];
 //        

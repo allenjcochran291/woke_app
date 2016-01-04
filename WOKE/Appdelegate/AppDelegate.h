@@ -13,6 +13,7 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) WOUserModel *userObj;
 @property(nonatomic,readwrite)BOOL isupdateProfile;
+@property (strong, nonatomic) UINavigationController *navigationController;
 
 -(NSMutableArray *)getContactAuthorizationFromUser;
 -(NSMutableArray *)getContacts;

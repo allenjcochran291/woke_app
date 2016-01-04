@@ -72,6 +72,8 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.matesButton setBackgroundImage:[UIImage imageNamed:@"00053_WOKE_ICONS_MATES_TAB_ON"] forState:UIControlStateNormal];
+
     UITextField *txfSearchField = [self.searchBar valueForKey:@"_searchField"];
     txfSearchField.backgroundColor = [UIColor redColor];
 	// Do any additional setup after loading the view, typically from a nib.
