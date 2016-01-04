@@ -34,8 +34,9 @@
 
 -(IBAction) segmentedControlIndexChanged:(UIButton *)sender
 {
-    
+    self.switchTag =(int)sender.tag;
     isSearching =NO;
+    self.segment.selectedSegmentIndex =sender.tag;
     switch (sender.tag) {
         case 0:
             contentList  = [_matesDict objectForKey:@"user_info"];
@@ -302,7 +303,7 @@ self.title =@"Mates";
     cell.backgroundColor =[UIColor clearColor];
     // Configure the cell before it is displayed...
     
-     if (self.segment.selectedSegmentIndex ==2) {
+     if (self.switchTag ==2) {
      
                     if (isSearching) {
                  NSData* data =[[filteredContentList objectAtIndex:indexPath.row] valueForKey:@"image"];
@@ -423,7 +424,7 @@ self.title =@"Mates";
         checkString =  [[filteredContentList objectAtIndex:button.tag] valueForKey:@"isAlreadyThere"];}
    else {
        checkString =  [[contentList objectAtIndex:button.tag] valueForKey:@"isAlreadyThere"];}
-    if (self.segment.selectedSegmentIndex ==2 && [checkString isEqualToString:@"NO"]) {
+    if (self.switchTag ==2 && [checkString isEqualToString:@"NO"]) {
         NSString *userName;
         NSString *phoneNo;
         if (isSearching) {

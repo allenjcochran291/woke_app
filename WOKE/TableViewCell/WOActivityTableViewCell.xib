@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="142" id="KGk-i7-Jjw" customClass="WOActivityTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="407" height="142"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="407" height="141"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lQn-qC-Pa5">
+                        <rect key="frame" x="8" y="13" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="7k6-J7-bWd"/>
+                            <constraint firstAttribute="width" constant="50" id="D45-re-eNF"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJX-aI-dR4">
+                        <rect key="frame" x="66" y="13" width="45" height="21"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uMk-Yn-xaK">
+                        <rect key="frame" x="66" y="37" width="30" height="14"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77W-6X-6Cd">
+                        <rect key="frame" x="66" y="60" width="30" height="14"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OWB-o6-JMF">
+                        <rect key="frame" x="373" y="8" width="15" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="15" id="M8U-Sg-Vsu"/>
+                            <constraint firstAttribute="height" constant="20" id="lxo-yb-qyN"/>
+                        </constraints>
+                        <state key="normal" backgroundImage="00053_WOKE_ICONS_ALARM"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHK-ZV-ML0">
+                        <rect key="frame" x="66" y="79" width="36" height="17"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1I-gi-Chq">
+                        <rect key="frame" x="329" y="8" width="15" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="CmM-zq-FMb"/>
+                            <constraint firstAttribute="width" constant="15" id="i2K-Dp-Bd5"/>
+                        </constraints>
+                        <state key="normal" backgroundImage="00053_WOKE_ICONS_LOCATION"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="OWB-o6-JMF" secondAttribute="trailing" constant="19" id="1AU-Tl-bXF"/>
+                    <constraint firstItem="OWB-o6-JMF" firstAttribute="leading" secondItem="d1I-gi-Chq" secondAttribute="trailing" constant="29" id="2iQ-3j-BxS"/>
+                    <constraint firstItem="uMk-Yn-xaK" firstAttribute="leading" secondItem="lQn-qC-Pa5" secondAttribute="trailing" constant="8" id="9h4-3l-fwy"/>
+                    <constraint firstItem="lQn-qC-Pa5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="Jqj-UI-mCw"/>
+                    <constraint firstItem="d1I-gi-Chq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Ohz-5N-PFI"/>
+                    <constraint firstItem="lQn-qC-Pa5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="13" id="Tui-pc-IrX"/>
+                    <constraint firstItem="OWB-o6-JMF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="U5M-8g-0bC"/>
+                    <constraint firstItem="LJX-aI-dR4" firstAttribute="leading" secondItem="lQn-qC-Pa5" secondAttribute="trailing" constant="8" id="ZWl-SF-pvE"/>
+                    <constraint firstItem="uMk-Yn-xaK" firstAttribute="top" secondItem="LJX-aI-dR4" secondAttribute="bottom" constant="3" id="bG8-HE-XnQ"/>
+                    <constraint firstItem="77W-6X-6Cd" firstAttribute="top" secondItem="uMk-Yn-xaK" secondAttribute="bottom" constant="9" id="gIV-mx-o2a"/>
+                    <constraint firstItem="wHK-ZV-ML0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="66" id="iRI-Yv-Ogo"/>
+                    <constraint firstItem="LJX-aI-dR4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="13" id="nKz-HG-c75"/>
+                    <constraint firstItem="77W-6X-6Cd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="66" id="uA7-Tt-tqB"/>
+                    <constraint firstItem="wHK-ZV-ML0" firstAttribute="top" secondItem="77W-6X-6Cd" secondAttribute="bottom" constant="5" id="x8u-iJ-Jmf"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="lastActive" destination="77W-6X-6Cd" id="nAf-h0-FgC"/>
+                <outlet property="locationButton" destination="d1I-gi-Chq" id="BCG-2x-jyU"/>
+                <outlet property="muteButton" destination="OWB-o6-JMF" id="akV-fy-j3A"/>
+                <outlet property="profileImageView" destination="lQn-qC-Pa5" id="G87-Wh-u8k"/>
+                <outlet property="profileName" destination="LJX-aI-dR4" id="sep-gI-CpW"/>
+                <outlet property="statesAndCity" destination="uMk-Yn-xaK" id="88V-Vk-5jn"/>
+                <outlet property="statusMessage" destination="wHK-ZV-ML0" id="RfA-DJ-9wW"/>
+            </connections>
+            <point key="canvasLocation" x="424.5" y="483"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="00053_WOKE_ICONS_ALARM" width="27" height="31"/>
+        <image name="00053_WOKE_ICONS_LOCATION" width="21" height="31"/>
+    </resources>
+</document>

@@ -58,6 +58,10 @@
 		B9EC55F41C21DE930098FD45 /* MapTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EC55F21C21DE930098FD45 /* MapTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		B9ED0AE71C3A83A300599F8C /* WOActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9ED0AE61C3A83A300599F8C /* WOActivityViewController.m */; settings = {ASSET_TAGS = (); }; };
 		B9ED0AE81C3A83A300599F8C /* WOActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9ED0AE61C3A83A300599F8C /* WOActivityViewController.m */; settings = {ASSET_TAGS = (); }; };
+		B9ED0AEC1C3A844700599F8C /* WOActivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9ED0AEA1C3A844700599F8C /* WOActivityTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		B9ED0AED1C3A844700599F8C /* WOActivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9ED0AEA1C3A844700599F8C /* WOActivityTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		B9ED0AEE1C3A844700599F8C /* WOActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9ED0AEB1C3A844700599F8C /* WOActivityTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		B9ED0AEF1C3A844700599F8C /* WOActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9ED0AEB1C3A844700599F8C /* WOActivityTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		B9EDB72C1C1F154500A77E34 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B9444ADB1C0624FE0049FF47 /* AFURLConnectionOperation.m */; settings = {ASSET_TAGS = (); }; };
 		B9EDB72E1C1F154500A77E34 /* WOEditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9CBD9211BC1250B00167969 /* WOEditProfileViewController.m */; settings = {ASSET_TAGS = (); }; };
 		B9EDB72F1C1F154500A77E34 /* WOCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B97EED8A1C0CD2F80089087B /* WOCreateViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -225,6 +229,9 @@
 		B9EC55F21C21DE930098FD45 /* MapTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapTableViewCell.m; sourceTree = "<group>"; };
 		B9ED0AE51C3A83A300599F8C /* WOActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOActivityViewController.h; sourceTree = "<group>"; };
 		B9ED0AE61C3A83A300599F8C /* WOActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOActivityViewController.m; sourceTree = "<group>"; };
+		B9ED0AE91C3A844700599F8C /* WOActivityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOActivityTableViewCell.h; sourceTree = "<group>"; };
+		B9ED0AEA1C3A844700599F8C /* WOActivityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOActivityTableViewCell.m; sourceTree = "<group>"; };
+		B9ED0AEB1C3A844700599F8C /* WOActivityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WOActivityTableViewCell.xib; sourceTree = "<group>"; };
 		B9EDB75B1C1F154500A77E34 /* WOKE copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WOKE copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9EDB75C1C1F154600A77E34 /* WOKE copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "WOKE copy-Info.plist"; path = "/Users/dheenadayalanselvaraj/Desktop/WOKE_current_source/WOKE copy-Info.plist"; sourceTree = "<absolute>"; };
 		B9EEC6F01C27C527005DCA83 /* MateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MateTableViewCell.h; sourceTree = "<group>"; };
@@ -506,6 +513,9 @@
 				B9EEC6F01C27C527005DCA83 /* MateTableViewCell.h */,
 				B9EEC6F11C27C527005DCA83 /* MateTableViewCell.m */,
 				B9EEC6F21C27C527005DCA83 /* MateTableViewCell.xib */,
+				B9ED0AE91C3A844700599F8C /* WOActivityTableViewCell.h */,
+				B9ED0AEA1C3A844700599F8C /* WOActivityTableViewCell.m */,
+				B9ED0AEB1C3A844700599F8C /* WOActivityTableViewCell.xib */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -682,6 +692,7 @@
 			files = (
 				B9F7A48D1C26A928005E8ADB /* CustomCell.xib in Resources */,
 				B90D8B4B1BB9C2240090741E /* LaunchScreen.storyboard in Resources */,
+				B9ED0AEE1C3A844700599F8C /* WOActivityTableViewCell.xib in Resources */,
 				B90541331C287A46006C6091 /* WOMatesViewController.xib in Resources */,
 				B9CBD9331BC12B2900167969 /* FDTake.strings in Resources */,
 				B90D8B481BB9C2240090741E /* Assets.xcassets in Resources */,
@@ -712,6 +723,7 @@
 			files = (
 				B9F7A4901C26A928005E8ADB /* CustomCell.xib in Resources */,
 				B9EDB7541C1F154500A77E34 /* LaunchScreen.storyboard in Resources */,
+				B9ED0AEF1C3A844700599F8C /* WOActivityTableViewCell.xib in Resources */,
 				B90541341C287A46006C6091 /* WOMatesViewController.xib in Resources */,
 				B9EDB7551C1F154500A77E34 /* FDTake.strings in Resources */,
 				B9EDB7561C1F154500A77E34 /* Assets.xcassets in Resources */,
@@ -769,6 +781,7 @@
 				B9444AED1C06254F0049FF47 /* NSDictionary+Utility.m in Sources */,
 				B9A0ECCE1BBAE47300A20BB7 /* WelcomeViewController.m in Sources */,
 				B9F869631C15F5AA0055D04F /* WOGetStartedViewController.m in Sources */,
+				B9ED0AEC1C3A844700599F8C /* WOActivityTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -838,6 +851,7 @@
 				B9EDB74D1C1F154500A77E34 /* NSDictionary+Utility.m in Sources */,
 				B9EDB74E1C1F154500A77E34 /* WelcomeViewController.m in Sources */,
 				B9EDB74F1C1F154500A77E34 /* WOGetStartedViewController.m in Sources */,
+				B9ED0AED1C3A844700599F8C /* WOActivityTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

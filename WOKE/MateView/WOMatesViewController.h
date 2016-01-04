@@ -32,6 +32,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *matesButton;
 @property (weak, nonatomic) IBOutlet UIButton *matesGroupButton;
 @property (weak, nonatomic) IBOutlet UIButton *contactButton;
+@property (readwrite, nonatomic) int switchTag;
 
 @property (strong, nonatomic)NSDictionary* matesDict;
 @property (strong, nonatomic) IBOutlet UISearchDisplayController *searchBarController;
