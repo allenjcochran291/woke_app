@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "1F1E9C98D761C86A264CC01ADD2E3B5CAF75F825",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "1D3E7FD2348A2AFD020A9B3CF1589F8894BA81F8" : 0,
+    "1F1E9C98D761C86A264CC01ADD2E3B5CAF75F825" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "BA86FFD5-511E-42C0-9CE7-DBB12AE5D806",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "1D3E7FD2348A2AFD020A9B3CF1589F8894BA81F8" : "..\/WOKE_current_source",
+    "1F1E9C98D761C86A264CC01ADD2E3B5CAF75F825" : "woke_app\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "WOKE",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "WOKE.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/muthiah-themesoft\/sampleProject.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1D3E7FD2348A2AFD020A9B3CF1589F8894BA81F8"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/allenjcochran291\/woke_app",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1F1E9C98D761C86A264CC01ADD2E3B5CAF75F825"
+    }
+  ]
+}
