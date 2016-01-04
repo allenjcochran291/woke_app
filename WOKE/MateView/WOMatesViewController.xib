@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WOMatesViewController">
             <connections>
+                <outlet property="backgroundView" destination="0FD-Zv-cGQ" id="Trm-JU-bOk"/>
                 <outlet property="searchBar" destination="9" id="20"/>
                 <outlet property="searchBarController" destination="10" id="21"/>
                 <outlet property="searchDisplayController" destination="10" id="12"/>
@@ -20,13 +21,6 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="9">
-                    <rect key="frame" x="0.0" y="64" width="320" height="44"/>
-                    <textInputTraits key="textInputTraits"/>
-                    <connections>
-                        <outlet property="delegate" destination="-1" id="17"/>
-                    </connections>
-                </searchBar>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="18">
                     <rect key="frame" x="0.0" y="108" width="320" height="352"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -36,7 +30,7 @@
                     </connections>
                 </tableView>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ilb-nq-sDh">
-                    <rect key="frame" x="0.0" y="30" width="320" height="29"/>
+                    <rect key="frame" x="0.0" y="37" width="320" height="29"/>
                     <segments>
                         <segment title="Mates"/>
                         <segment title="Mates Groups"/>
@@ -44,22 +38,37 @@
                     </segments>
                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 </segmentedControl>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0FD-Zv-cGQ">
+                    <rect key="frame" x="0.0" y="68" width="320" height="36"/>
+                    <subviews>
+                        <searchBar contentMode="redraw" fixedFrame="YES" barStyle="black" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="9">
+                            <rect key="frame" x="0.0" y="-4" width="320" height="44"/>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="17"/>
+                            </connections>
+                        </searchBar>
+                    </subviews>
+                    <color key="backgroundColor" red="0.59215686270000001" green="0.0" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
             </subviews>
             <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="ilb-nq-sDh" firstAttribute="leading" secondItem="6" secondAttribute="leading" id="4f0-ak-2pZ"/>
-                <constraint firstItem="ilb-nq-sDh" firstAttribute="top" secondItem="6" secondAttribute="top" constant="30" id="Oyb-LV-7a0"/>
-                <constraint firstAttribute="trailing" secondItem="18" secondAttribute="trailing" id="SYX-Eh-wui"/>
-                <constraint firstAttribute="bottom" secondItem="18" secondAttribute="bottom" id="URn-4b-vk6"/>
-                <constraint firstItem="18" firstAttribute="top" secondItem="9" secondAttribute="bottom" id="bi7-FY-Q2Q"/>
-                <constraint firstItem="9" firstAttribute="top" secondItem="ilb-nq-sDh" secondAttribute="bottom" constant="6" id="iTN-YC-dHB"/>
-                <constraint firstItem="18" firstAttribute="leading" secondItem="6" secondAttribute="leading" id="mVe-ms-HTi"/>
-                <constraint firstAttribute="trailing" secondItem="9" secondAttribute="trailing" id="oKz-Zk-faQ"/>
-                <constraint firstItem="9" firstAttribute="leading" secondItem="6" secondAttribute="leading" id="qbz-Hf-U1s"/>
-                <constraint firstAttribute="trailing" secondItem="ilb-nq-sDh" secondAttribute="trailing" id="y0j-Rm-iVZ"/>
+                <constraint firstItem="18" firstAttribute="top" secondItem="0FD-Zv-cGQ" secondAttribute="bottom" constant="4" id="04R-jv-q6H"/>
+                <constraint firstItem="ilb-nq-sDh" firstAttribute="trailing" secondItem="18" secondAttribute="trailing" id="0ld-nE-lbn"/>
+                <constraint firstItem="0FD-Zv-cGQ" firstAttribute="top" secondItem="ilb-nq-sDh" secondAttribute="bottom" constant="3" id="3mW-rB-QaG"/>
+                <constraint firstAttribute="bottom" secondItem="0FD-Zv-cGQ" secondAttribute="bottom" constant="356" id="H9b-m2-Es4"/>
+                <constraint firstAttribute="trailing" secondItem="ilb-nq-sDh" secondAttribute="trailing" id="SiI-ai-B1H"/>
+                <constraint firstItem="0FD-Zv-cGQ" firstAttribute="trailing" secondItem="ilb-nq-sDh" secondAttribute="trailing" id="Soe-1u-9Di"/>
+                <constraint firstItem="0FD-Zv-cGQ" firstAttribute="leading" secondItem="ilb-nq-sDh" secondAttribute="leading" id="a28-6P-gpR"/>
+                <constraint firstItem="ilb-nq-sDh" firstAttribute="leading" secondItem="6" secondAttribute="leading" id="kpC-JK-mho"/>
+                <constraint firstItem="ilb-nq-sDh" firstAttribute="leading" secondItem="18" secondAttribute="leading" id="nqf-yT-kOX"/>
+                <constraint firstAttribute="bottom" secondItem="18" secondAttribute="bottom" id="qCT-pc-e5R"/>
+                <constraint firstItem="ilb-nq-sDh" firstAttribute="top" secondItem="6" secondAttribute="top" constant="37" id="usc-vz-nhI"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="151" y="523"/>
+            <point key="canvasLocation" x="151" y="497"/>
         </view>
         <searchDisplayController id="10">
             <connections>

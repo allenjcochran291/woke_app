@@ -16,6 +16,8 @@
 #import "AFHTTPClient.h"
 #import "MBProgressHUD.h"
 #import "NSDictionary+Utility.h"
+#import "UIImageView+AFNetworking.h"
+
 
 #import "WOValidation+NSString.h"
 

@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *statusMessage;
 @property (weak, nonatomic) IBOutlet UIButton *profileImage;
 @property (weak, nonatomic) IBOutlet UITextField *state;
+@property (weak, nonatomic) IBOutlet UIView *profileViewBackground;
 
 @property (weak, nonatomic) IBOutlet UITextField *address1;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;

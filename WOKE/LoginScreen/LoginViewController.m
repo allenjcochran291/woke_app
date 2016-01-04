@@ -134,6 +134,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+
     // register for keyboard notifications
 //    [[NSNotificationCenter defaultCenter] addObserver:self
 //                                             selector:@selector(keyboardWillShow)
@@ -145,7 +146,12 @@
 //                                                 name:UIKeyboardWillHideNotification
 //                                               object:nil];
 }
-
+-(void)viewDidAppear:(BOOL)animated{
+    self.userNameTxt.text =@"raju@raj.com";
+    self.passWordTxt.text =@"raju";
+    [self loginButtonClicked:nil];
+    [super viewDidAppear:animated];
+}
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
@@ -175,12 +181,12 @@
 - (IBAction)loginButtonClicked:(UIButton *)sender {
     AppDelegate* appdelegateObj = (AppDelegate*)[[UIApplication sharedApplication]delegate];
 
-    if (true) {
-        [self performSegueWithIdentifier:@"sucessLogin" sender:nil];
-        
-        appdelegateObj.userObj.userid =[NSString stringWithFormat:@"100"];
-        return;
-    }
+//    if (true) {
+//        [self performSegueWithIdentifier:@"sucessLogin" sender:nil];
+//        
+//        appdelegateObj.userObj.userid =[NSString stringWithFormat:@"100"];
+//        return;
+//    }
    
     
     
@@ -221,7 +227,7 @@
         
         NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
                                 API_KEY,@"client_key",
-                                _userNameTxt.text, @"Email",
+                                _userNameTxt.text, @"email",
                                 _passWordTxt.text, @"password",
                                 @"fffff",@"device_id",
                                 

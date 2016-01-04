@@ -10,6 +10,8 @@
 #import "WOContactTableViewCell.h"
 #import "AppDelegate.h"
 #import "UIImageView+AFNetworking.h"
+#import "WOValidation+NSString.h"
+
 #import "AFHTTPRequestOperation.h"
 @interface WOProfileViewController ()<UITextFieldDelegate, UITextViewDelegate>
 {
@@ -42,6 +44,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _appdelegateObj = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    [self addBottomBorderWithColor:[UIColor lightGrayColor] andWidth:1.0 withView:self.profileViewBackground];
 
     self.takeController = [[FDTakeController alloc] init];
     self.takeController.delegate = (id)self;
@@ -51,8 +54,8 @@
     self.profileImageView.image =[UIImage imageNamed:@"email1"];
     self.profileTableView.backgroundColor =[UIColor clearColor];
     self.profileTableView.separatorColor= [UIColor clearColor];
-    contactLabelArry =[NSArray arrayWithObjects:@"mobile",@"Mobile Phone",@"Email Address",@"Office Address",@"Home Address" ,nil];
-    contactImageArry =[NSArray arrayWithObjects:@"WOK_MOBILE_ICON",@"WOK_PHONE_ICON",@"WOK_EMAIL_ICON",@"WOK_OFFICE_ICON",@"WOK_HOUSE_ICON", nil];
+    contactLabelArry =[NSArray arrayWithObjects:@"mobile",@"MOBILE PHONE",@"EMAIL",@"WORK ADDRESS",@"HOME ADDRESS" ,nil];
+    contactImageArry =[NSArray arrayWithObjects:@"00053_WOKE_ICONS_PHONE-ON",@"00053_WOKE_ICONS_PHONE-ON",@"00053_WOKE_ICONS_EMAIL-NORM(2)",@"00053_WOKE_ICONS_ADDRESS-NORM(2)",@"00053_WOKE_ICONS_ADDRESS-NORM", nil];
     self.profileTableView.allowsSelection = NO;
     self.statusMessage.text =@"Hey I am at Grocery";
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
@@ -140,12 +143,16 @@
             cell.backgroundColor =[UIColor clearColor];
             cell.contactTitle.text =[contactLabelArry objectAtIndex:indexPath.row];
             cell.contactIcon.image = [UIImage imageNamed:[contactImageArry objectAtIndex:indexPath.row]];
+            cell.contactIcon.frame = CGRectMake(cell.contactIcon.frame.origin.x,
+                                                cell.contactIcon.frame.origin.y,
+                                                cell.contactIcon.image.size.width,
+                                                cell.contactIcon.image.size.height);
             if (indexPath.row == 0)                 cell.nameTextField.text = _appdelegateObj.userObj.fullName;
 
             if (indexPath.row == 1)
             {
                 [cell.contactTextField setKeyboardType:UIKeyboardTypeNumberPad];
-                cell.contactTextField.text = _appdelegateObj.userObj.phoneNo;
+                cell.contactTextField.text = [_appdelegateObj.userObj.phoneNo phoneNumber];
             }
 
             if (indexPath.row == 2)                 cell.contactTextField.text = _appdelegateObj.userObj.userEmail;
@@ -166,6 +173,10 @@
             }
             cell.contactTitle.text =[contactLabelArry objectAtIndex:indexPath.row];
             cell.contactIcon.image = [UIImage imageNamed:[contactImageArry objectAtIndex:indexPath.row]];
+            cell.contactIcon.frame = CGRectMake(cell.contactIcon.frame.origin.x,
+                                                cell.contactIcon.frame.origin.y,
+                                                cell.contactIcon.image.size.width,
+                                                cell.contactIcon.image.size.height);
             if (indexPath.row == 3){
                 cell.address1.tag =103;
                 cell.address2.tag =104;
@@ -174,6 +185,9 @@
                 cell.address1.text = _appdelegateObj.userObj.officeAddress1;
                 cell.address2.text = _appdelegateObj.userObj.officeAddress2;
                 cell.state.text = _appdelegateObj.userObj.officeAdressState;
+                [self addBottomBorderForOfficeAddressWithColor:[UIColor lightGrayColor] andWidth:1.0 withView:cell.contentView];
+                
+
             }
             
             if (indexPath.row == 4)
@@ -184,6 +198,7 @@
                 cell.address1.text = _appdelegateObj.userObj.homeAddress1;
                 cell.address2.text = _appdelegateObj.userObj.homeAddress2;
                 cell.state.text = _appdelegateObj.userObj.homeAddressState;
+                [self addBottomBorderForOfficeAddressWithColor:[UIColor lightGrayColor] andWidth:1.0 withView:cell.contentView];
 
             }
                 cell.backgroundColor =[UIColor clearColor];
@@ -204,6 +219,10 @@
             cell.backgroundColor =[UIColor clearColor];
             cell.contactTitle.text =[contactLabelArry objectAtIndex:indexPath.row];
             cell.contactIcon.image = [UIImage imageNamed:[contactImageArry objectAtIndex:indexPath.row]];
+            cell.contactIcon.frame = CGRectMake(cell.contactIcon.frame.origin.x,
+                                              cell.contactIcon.frame.origin.y,
+                                              cell.contactIcon.image.size.width,
+                                              cell.contactIcon.image.size.height);
             if (self.appdelegateObj.userObj.profileImage!=nil) {
                 [cell.profileImage setBackgroundImage:self.appdelegateObj.userObj.profileImage forState:UIControlStateNormal];
                 cell.profileImage.layer.cornerRadius = 30;
@@ -222,7 +241,8 @@
                     cell.profileImage.layer.masksToBounds = YES;
                     _isDownloaded=YES;
                 }
-              
+                [self addBottomBorderWithColor:[UIColor lightGrayColor] andWidth:0.5 withView:cell.profileViewBackground];
+                [self addTopBorderWithColor:[UIColor lightGrayColor] andWidth:0.5 withView:cell.profileViewBackground];
 //                __weak UITableViewCell *weakCell = cell;
 //                [cell.profileImageView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.appdelegateObj.userObj.profilePath]] placeholderImage:nil success:^(NSURLRequest *request,   NSHTTPURLResponse *response, UIImage *image) {
 //                    if (weakCell)
@@ -447,7 +467,9 @@ if (indexPath.section == 0) {
 }
 
 - (IBAction)doneAction:(id)sender {
-    
+   self.appdelegateObj.userObj.phoneNo= [self.appdelegateObj.userObj.phoneNo stringByReplacingOccurrencesOfString:@"(" withString:@""];
+   self.appdelegateObj.userObj.phoneNo= [self.appdelegateObj.userObj.phoneNo stringByReplacingOccurrencesOfString:@") " withString:@""];
+    self.appdelegateObj.userObj.phoneNo= [self.appdelegateObj.userObj.phoneNo stringByReplacingOccurrencesOfString:@"-" withString:@""];
     
     if (_isupdateProfile) {
         
@@ -459,6 +481,8 @@ if (indexPath.section == 0) {
             [self.view addSubview:hud];
             [self.view setUserInteractionEnabled:NO];
             
+     
+
             NSURL *url = [NSURL URLWithString:@"http://www.creativelabinteractive.com/woke/api/index.php?route=account/update"];
             AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:url];
             
@@ -707,8 +731,8 @@ if (indexPath.section == 0) {
     
 }
         
-        -(void)presentAlert:(NSString *)message
-        {
+-(void)presentAlert:(NSString *)message
+{
             UIAlertController *myAlertController = [UIAlertController alertControllerWithTitle:@"WOKEAPP"
                                                                                        message: message
                                                                                 preferredStyle:UIAlertControllerStyleAlert                   ];
@@ -729,6 +753,46 @@ if (indexPath.section == 0) {
             
             //Step 4: Present the alert to the user
             [self presentViewController:myAlertController animated:YES completion:nil];
-        }
+}
+
+- (void)addTopBorderWithColor:(UIColor *)color andWidth:(CGFloat) borderWidth withView:(UIView *)view{
+    UIView *border = [UIView new];
+    border.backgroundColor = color;
+    [border setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin];
+    border.frame = CGRectMake(0, 0, view.frame.size.width, borderWidth);
+    [view addSubview:border];
+}
+
+- (void)addBottomBorderWithColor:(UIColor *)color andWidth:(CGFloat) borderWidth withView:(UIView *)view{
+    UIView *border = [UIView new];
+    border.backgroundColor = color;
+    [border setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin];
+    border.frame = CGRectMake(0, view.frame.size.height - borderWidth, view.frame.size.width, borderWidth);
+    [view addSubview:border];
+    
+}
+- (void)addBottomBorderForOfficeAddressWithColor:(UIColor *)color andWidth:(CGFloat) borderWidth withView:(UIView *)view{
+    UIView *border = [UIView new];
+    border.backgroundColor = color;
+    [border setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin];
+    border.frame = CGRectMake(80, view.frame.size.height - borderWidth, view.frame.size.width-100, borderWidth);
+    [view addSubview:border];
+    
+}
+- (void)addLeftBorderWithColor:(UIColor *)color andWidth:(CGFloat) borderWidth withView:(UIView *)view{
+    CALayer *border = [CALayer layer];
+    border.backgroundColor = color.CGColor;
+    
+    border.frame = CGRectMake(0, 0, borderWidth, view.frame.size.height);
+    [view.layer addSublayer:border];
+}
+
+- (void)addRightBorderWithColor:(UIColor *)color andWidth:(CGFloat) borderWidth withView:(UIView *)view {
+    CALayer *border = [CALayer layer];
+    border.backgroundColor = color.CGColor;
+    
+    border.frame = CGRectMake(view.frame.size.width - borderWidth, 0, borderWidth, view.frame.size.height);
+    [view.layer addSublayer:border];
+}
 
 @end

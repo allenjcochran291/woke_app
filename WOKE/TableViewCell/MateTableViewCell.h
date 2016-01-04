@@ -12,5 +12,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *inviteButton;
 @property (weak, nonatomic) IBOutlet UILabel *userTitle;
 @property (weak, nonatomic) IBOutlet UILabel *phoneNo;
+@property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 
 @end

@@ -15,45 +15,42 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AaW-NA-axz">
-                        <rect key="frame" x="19" y="8" width="47" height="21"/>
+                        <rect key="frame" x="80" y="20" width="47" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="21" id="CMb-OG-1og"/>
+                            <constraint firstAttribute="height" constant="21" id="2Nx-ux-YbZ"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="II3-tf-fwm">
-                        <rect key="frame" x="23" y="32" width="31" height="21"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c4D-wR-Ny2">
+                        <rect key="frame" x="5" y="5" width="50" height="50"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="21" id="2gV-d5-Efm"/>
+                            <constraint firstAttribute="height" constant="50" id="BsN-Ue-0Wf"/>
+                            <constraint firstAttribute="width" constant="50" id="euB-gX-oD0"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8r-nP-Ew4">
-                        <rect key="frame" x="308" y="16" width="30" height="30"/>
+                        <rect key="frame" x="307" y="18" width="25" height="25"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="30" id="Dod-0q-7Mo"/>
-                            <constraint firstAttribute="height" constant="30" id="jUt-h3-d16"/>
+                            <constraint firstAttribute="width" constant="25" id="5VO-37-9lG"/>
+                            <constraint firstAttribute="height" constant="25" id="Rpf-Z5-msk"/>
                         </constraints>
                         <state key="normal" backgroundImage="WOK_PHONE_ICON"/>
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="II3-tf-fwm" firstAttribute="top" secondItem="AaW-NA-axz" secondAttribute="bottom" constant="3" id="2k6-Hp-4IX"/>
-                    <constraint firstAttribute="trailing" secondItem="U8r-nP-Ew4" secondAttribute="trailing" constant="14" id="NOc-NV-xsv"/>
-                    <constraint firstItem="AaW-NA-axz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="SWU-Ob-iuk"/>
-                    <constraint firstItem="U8r-nP-Ew4" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="XKE-o9-tbY"/>
-                    <constraint firstItem="II3-tf-fwm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="23" id="YDf-tA-mqB"/>
-                    <constraint firstItem="AaW-NA-axz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="19" id="a5s-MO-H0C"/>
-                    <constraint firstItem="U8r-nP-Ew4" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="yIb-i0-O5w"/>
+                    <constraint firstItem="AaW-NA-axz" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="2WC-2d-oud"/>
+                    <constraint firstItem="c4D-wR-Ny2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="dW7-yr-BmU"/>
+                    <constraint firstItem="AaW-NA-axz" firstAttribute="leading" secondItem="c4D-wR-Ny2" secondAttribute="trailing" constant="25" id="hJw-B8-z5j"/>
+                    <constraint firstItem="c4D-wR-Ny2" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="hg1-mC-5pq"/>
+                    <constraint firstAttribute="trailing" secondItem="U8r-nP-Ew4" secondAttribute="trailing" constant="20" id="oaW-HZ-vnM"/>
+                    <constraint firstItem="U8r-nP-Ew4" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="vMo-KJ-5PN"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="inviteButton" destination="U8r-nP-Ew4" id="iNc-F4-k0M"/>
-                <outlet property="phoneNo" destination="II3-tf-fwm" id="biA-zq-vnb"/>
+                <outlet property="profileImageView" destination="c4D-wR-Ny2" id="5T7-bk-2rc"/>
                 <outlet property="userTitle" destination="AaW-NA-axz" id="n6T-9v-nhC"/>
             </connections>
             <point key="canvasLocation" x="536" y="383"/>

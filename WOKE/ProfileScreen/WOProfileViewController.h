@@ -12,5 +12,6 @@
 @property FDTakeController *takeController;
 @property(nonatomic,readwrite)BOOL isupdateProfile;
 @property(nonatomic,readwrite)BOOL isDownloaded;
+@property (weak, nonatomic) IBOutlet UIView *profileViewBackground;
 
 @end

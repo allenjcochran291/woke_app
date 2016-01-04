@@ -11,6 +11,8 @@
 @interface WOMatesViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     
     NSMutableArray *contentList;
+    NSMutableArray *alreadyAddedArray;
+
     NSMutableArray *categList;
     UIPickerView *pickerView;
     NSMutableArray *filteredContentList;
@@ -20,6 +22,7 @@
     NSString *mateUserId;
 
 }
+@property (weak, nonatomic) IBOutlet UIView *backgroundView;
 @property (strong, nonatomic) NSMutableArray *filteredContentList;
 @property (strong, nonatomic) UIPickerView *pickerView;
 

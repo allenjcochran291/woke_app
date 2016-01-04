@@ -40,12 +40,10 @@
             break;
         case 1:
             contentList  = [[NSMutableArray alloc]init];
-
             [self.tblContentList  reloadData];
             break;
         case 2:
              [self setContacts];
-            [self.tblContentList  reloadData];
             break;
         default:
             break;
@@ -58,6 +56,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    self.tblContentList.separatorStyle = UITableViewCellSeparatorStyleNone;
 
 self.title =@"Mates";
     filteredContentList = [[NSMutableArray alloc] init];
@@ -68,6 +67,14 @@ self.title =@"Mates";
     [self loadMates:@"sa"];
     [self.tblContentList setBackgroundColor:[UIColor clearColor]];
     [self.tblContentList reloadData];
+    [searchBar setBackgroundImage:[UIImage new]];
+    [searchBar setTranslucent:YES];
+    [_backgroundView.layer setBorderColor:[UIColor lightGrayColor].CGColor];
+    [_backgroundView.layer setBorderWidth:2.0];
+    [self.segment setDividerImage:[UIImage new] forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+//    [self.segment setBackgroundImage:[UIImage new] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+  
+
 }
 -(NSMutableArray *)getContactAuthorizationFromUser{
     NSMutableArray *finalContactList = [[NSMutableArray alloc] init];
@@ -164,6 +171,18 @@ self.title =@"Mates";
 {
 
     contentList = [self getContacts];
+    NSMutableArray *array =[[NSMutableArray alloc]init];
+    
+    for (NSDictionary *phoneDict in contentList) {
+        [array addObject:[phoneDict valueForKey:@"mobile_no"]];
+    }
+    NSString *str =[array componentsJoinedByString:@","];
+    NSString *hardcore = [NSString stringWithFormat:@"9579845678"];
+    [str stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSArray* words = [str componentsSeparatedByCharactersInSet :[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString* nospacestring = [words componentsJoinedByString:@""];
+    [self loadcontacts:nospacestring];
+    
     //    NSSortDescriptor *contactSortDiscriptor = [[NSSortDescriptor alloc] initWithKey:@"first_name" ascending:YES];
     //    [addressbookConacts sortUsingDescriptors:[NSArray arrayWithObject:contactSortDiscriptor]];
     //    //NSLog(@"addressbookConacts:--->%@", addressbookConacts);
@@ -220,45 +239,119 @@ self.title =@"Mates";
         cell.userTitle.text =  [[filteredContentList objectAtIndex:indexPath.row] valueForKey:@"first_name"];;
         cell.phoneNo.text =  [[filteredContentList objectAtIndex:indexPath.row] valueForKey:@"mobile_no"];;
         NSLog(@"userName : %@   --- %lu",[[filteredContentList objectAtIndex:indexPath.row] valueForKey:@"first_name"], (unsigned long)[filteredContentList count]);
-    }
+        
+        [cell.profileImageView setImageWithURL:[NSURL URLWithString:[[filteredContentList objectAtIndex:indexPath.row] valueForKey:@"profile_photo_path"]]];
+        }
     else {
         cell.userTitle.text =  [[contentList objectAtIndex:indexPath.row] valueForKey:@"first_name"];;
         cell.phoneNo.text =  [[contentList objectAtIndex:indexPath.row] valueForKey:@"mobile_no"];;
+               [cell.profileImageView setImageWithURL:[NSURL URLWithString:[[contentList objectAtIndex:indexPath.row] valueForKey:@"profile_photo_path"]]];
         
         
     }
+    cell.profileImageView.layer.cornerRadius = 25;
+    cell.profileImageView.layer.masksToBounds = YES;
     cell.backgroundColor =[UIColor clearColor];
     // Configure the cell before it is displayed...
     
      if (self.segment.selectedSegmentIndex ==2) {
+     
+                    if (isSearching) {
+                 NSData* data =[[filteredContentList objectAtIndex:indexPath.row] valueForKey:@"image"];
+                 [cell.profileImageView setImage:[UIImage imageWithData:data]];
+                        NSString *checkString = [[filteredContentList objectAtIndex:indexPath.row]valueForKey:@"isAlreadyThere"];
+                        
+                        if (![checkString isEqualToString:@"YES"]) {
+                            [cell.inviteButton setBackgroundImage:[UIImage imageNamed:@"00053_WOKE_ICONS_EMAIL-ON(2)"]
+                                                         forState:UIControlStateNormal];
+                        }
+                        else
+                        {
+                            if (isSearching) {
+                                if ( [[[filteredContentList objectAtIndex:indexPath.row] valueForKey:@"isalreadymate"]boolValue]) {
+                                    [cell.inviteButton setBackgroundImage:[UIImage imageNamed:@"00053_WOKE_ICONS_CHECK-ACTIVE"]
+                                                                 forState:UIControlStateNormal];
+                                }
+                                else
+                                    [cell.inviteButton setBackgroundImage:[UIImage imageNamed:@"00053_WOKE_ICONS_ADD_PLUS-OFF"]
+                                                                 forState:UIControlStateNormal];
+                            }
+                            else
+                            {
+                                if ( [[[contentList objectAtIndex:indexPath.row] valueForKey:@"isalreadymate"]boolValue]) {
+                                    [cell.inviteButton setBackgroundImage:[UIImage imageNamed:@"00053_WOKE_ICONS_CHECK-ACTIVE"]
+                                                                 forState:UIControlStateNormal];
+                                }
+                                else
+                                    [cell.inviteButton setBackgroundImage:[UIImage imageNamed:@"00053_WOKE_ICONS_ADD_PLUS-OFF"]
+                                                                 forState:UIControlStateNormal];
+                                
+                            }
+
+                        }
+
+             }else
+             {
+                 NSData* data =[[contentList objectAtIndex:indexPath.row] valueForKey:@"image"];
+              [cell.profileImageView setImage:[UIImage imageWithData:data]];
+                 NSString *checkString = [[contentList objectAtIndex:indexPath.row]valueForKey:@"isAlreadyThere"];
+                 
+                 if (![checkString isEqualToString:@"YES"]) {
+                     [cell.inviteButton setBackgroundImage:[UIImage imageNamed:@"00053_WOKE_ICONS_EMAIL-ON(2)"]
+                                                  forState:UIControlStateNormal];
+                 }
+                 else
+                 {
+                  
+                     if (isSearching) {
+                         if ( [[[filteredContentList objectAtIndex:indexPath.row] valueForKey:@"isalreadymate"]boolValue]) {
+                             [cell.inviteButton setBackgroundImage:[UIImage imageNamed:@"00053_WOKE_ICONS_CHECK-ACTIVE"]
+                                                          forState:UIControlStateNormal];
+                         }
+                         else
+                             [cell.inviteButton setBackgroundImage:[UIImage imageNamed:@"00053_WOKE_ICONS_ADD_PLUS-OFF"]
+                                                          forState:UIControlStateNormal];
+                     }
+                     else
+                     {
+                         if ( [[[contentList objectAtIndex:indexPath.row] valueForKey:@"isalreadymate"]boolValue]) {
+                             [cell.inviteButton setBackgroundImage:[UIImage imageNamed:@"00053_WOKE_ICONS_CHECK-ACTIVE"]
+                                                          forState:UIControlStateNormal];
+                         }
+                         else
+                             [cell.inviteButton setBackgroundImage:[UIImage imageNamed:@"00053_WOKE_ICONS_ADD_PLUS-OFF"]
+                                                          forState:UIControlStateNormal];
+                         
+                     }
+                 }
+
+             }
+         
         
-         [cell.inviteButton setBackgroundImage:[UIImage imageNamed:@"Invite-100"]
-                             forState:UIControlStateNormal];
      }
     else
     {
         
             if (isSearching) {
         if ( [[[filteredContentList objectAtIndex:indexPath.row] valueForKey:@"isalreadymate"]boolValue]) {
-            [cell.inviteButton setBackgroundImage:[UIImage imageNamed:@"Timer Filled"]
+            [cell.inviteButton setBackgroundImage:[UIImage imageNamed:@"00053_WOKE_ICONS_CHECK-ACTIVE"]
                                          forState:UIControlStateNormal];
         }
         else
-        [cell.inviteButton setBackgroundImage:[UIImage imageNamed:@"Add User-100"]
+        [cell.inviteButton setBackgroundImage:[UIImage imageNamed:@"00053_WOKE_ICONS_ADD_PLUS-OFF"]
                                      forState:UIControlStateNormal];
             }
         else
         {
             if ( [[[contentList objectAtIndex:indexPath.row] valueForKey:@"isalreadymate"]boolValue]) {
-                [cell.inviteButton setBackgroundImage:[UIImage imageNamed:@"Timer Filled"]
+                [cell.inviteButton setBackgroundImage:[UIImage imageNamed:@"00053_WOKE_ICONS_CHECK-ACTIVE"]
                                              forState:UIControlStateNormal];
             }
             else
-                [cell.inviteButton setBackgroundImage:[UIImage imageNamed:@"Add User-100"]
+                [cell.inviteButton setBackgroundImage:[UIImage imageNamed:@"00053_WOKE_ICONS_ADD_PLUS-OFF"]
                                              forState:UIControlStateNormal];
 
         }
-
     }
     cell.inviteButton.tag =indexPath.row;
     [cell.inviteButton addTarget:self
@@ -272,8 +365,12 @@ self.title =@"Mates";
 }
 -(void)inviteButton:(UIButton *)button
 {
-    
-    if (self.segment.selectedSegmentIndex ==2) {
+    NSString *checkString;
+    if (isSearching) {
+        checkString =  [[filteredContentList objectAtIndex:button.tag] valueForKey:@"isAlreadyThere"];}
+   else {
+       checkString =  [[contentList objectAtIndex:button.tag] valueForKey:@"isAlreadyThere"];}
+    if (self.segment.selectedSegmentIndex ==2 && [checkString isEqualToString:@"NO"]) {
         NSString *userName;
         NSString *phoneNo;
         if (isSearching) {
@@ -399,6 +496,7 @@ userName =  [NSString stringWithFormat:@"%@",[[contentList objectAtIndex:button.
             }
             else{
                 [self presentAlert:[[json objectForKey:@"status"]valueForKey:@"message"]];
+                [self.segment setSelectedSegmentIndex:0];
                  [self loadMates:@"sa"];
             }
             [hud removeFromSuperview];
@@ -418,11 +516,9 @@ userName =  [NSString stringWithFormat:@"%@",[[contentList objectAtIndex:button.
     }
  
 }
-
-
 -(void)loadMates:(NSString *)keyWord
 {
-
+    
     
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.mode = MBProgressHUDModeIndeterminate;
@@ -445,8 +541,8 @@ userName =  [NSString stringWithFormat:@"%@",[[contentList objectAtIndex:button.
         
         NSError* error;
         _matesDict = [NSJSONSerialization JSONObjectWithData:responseObject
-                                                             options:kNilOptions
-                                                               error:&error];
+                                                     options:kNilOptions
+                                                       error:&error];
         
         NSLog(@"LOGIN_SYNC = %@", _matesDict);
         if ([[[_matesDict objectForKey:@"status"]valueForKey:@"code"]integerValue]==505){
@@ -456,6 +552,90 @@ userName =  [NSString stringWithFormat:@"%@",[[contentList objectAtIndex:button.
         }
         else{
             [self presentAlert:[[_matesDict objectForKey:@"status"]valueForKey:@"message"]];
+        }
+        [hud removeFromSuperview];
+        [self.tblContentList setUserInteractionEnabled:YES];
+        
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [hud removeFromSuperview];
+        [self.tblContentList setUserInteractionEnabled:YES];
+        [self presentAlert:error.localizedDescription];
+        
+        NSLog(@"[HTTPClient Error]: %@", error.localizedDescription);
+        
+    }];
+    
+}
+
+-(void)loadcontacts:(NSString *)keyWord
+{
+
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeIndeterminate;
+    hud.labelText = @"Loading";
+    
+    [self.tblContentList addSubview:hud];
+    [self.tblContentList setUserInteractionEnabled:NO];
+    
+    NSURL *url = [NSURL URLWithString:@"http://www.creativelabinteractive.com/woke/api/index.php?route=account/checkcontactsinwoke"];
+    AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:url];
+    appdelegateObj = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                            API_KEY,@"client_key",
+                            keyWord, @"contacts",
+                            [appdelegateObj.userObj.userid empty], @"user_id",
+                            @"fffff",@"device_id",
+                            nil];
+    
+    [httpClient postPath:@"" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSError* error;
+       NSDictionary *mateDict = [NSJSONSerialization JSONObjectWithData:responseObject
+                                                             options:kNilOptions
+                                                               error:&error];
+        
+        NSLog(@"LOGIN_SYNC = %@", mateDict);
+        if ([[[mateDict objectForKey:@"status"]valueForKey:@"code"]integerValue]==505){
+          alreadyAddedArray = [[NSMutableArray alloc]init];
+//            contentList  = [_matesDict objectForKey:@"user_info"];
+            alreadyAddedArray =[mateDict objectForKey:@"user_info"];
+            
+        
+            
+            
+            for (int i = 0; i < [alreadyAddedArray count]; i++)
+            {
+                NSString *checkString = [[alreadyAddedArray objectAtIndex:i]valueForKey:@"user_id"];
+                
+                if ([checkString isEqual: [NSNull null]]) {
+                    
+                    NSMutableDictionary *dict = [contentList objectAtIndex:i];
+                    [dict setObject:@"NO" forKey:@"isAlreadyThere"];
+                    
+                    [dict setObject:[[alreadyAddedArray objectAtIndex:i]valueForKey:@"isalreadymate"] forKey:@"isalreadymate"];
+
+                    [contentList replaceObjectAtIndex:i withObject:dict];
+                }
+                else
+                {
+                
+                    NSMutableDictionary *dict = [contentList objectAtIndex:i];
+                    [dict setObject:@"YES" forKey:@"isAlreadyThere"];
+                    [dict setObject:[[alreadyAddedArray objectAtIndex:i]valueForKey:@"isalreadymate"] forKey:@"isalreadymate"];
+
+                    [contentList replaceObjectAtIndex:i withObject:dict];
+                }
+                
+            }
+
+            
+           [self.tblContentList reloadData];
+        }
+        else{
+            [self presentAlert:[[mateDict objectForKey:@"status"]valueForKey:@"message"]];
         }
         [hud removeFromSuperview];
         [self.tblContentList setUserInteractionEnabled:YES];
@@ -615,6 +795,8 @@ userName =  [NSString stringWithFormat:@"%@",[[contentList objectAtIndex:button.
     //Remove all objects first.
     [filteredContentList removeAllObjects];
     
+    
+   
     if([searchText length] != 0) {
         isSearching = YES;
         [self searchTableList];
@@ -627,6 +809,8 @@ userName =  [NSString stringWithFormat:@"%@",[[contentList objectAtIndex:button.
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
     NSLog(@"Cancel clicked");
+    isSearching = NO;
+
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
